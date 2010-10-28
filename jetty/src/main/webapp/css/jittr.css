@@ -1,0 +1,72 @@
+body {
+    background:#00547d url(../images/bg.jpg) repeat-x 0 0;
+    color:#ccc;
+    font:14px 'Lucida Grande', sans-serif;
+}
+
+a {
+    color:#249eca;
+    text-decoration:none;
+}
+
+a:hover {
+    text-decoration:underline;
+}
+
+img {
+    border:0;
+}
+
+#header {
+    margin-bottom:20px;
+}
+
+#container {
+    width:763px;
+    margin:auto;
+}
+
+#content {
+    overflow:auto;
+}
+
+#footer {
+    font-size:12px;
+    margin-top:20px;
+}
+
+#tweet_form {
+    margin-bottom:20px;
+    overflow:auto;
+}
+
+#tweet_form textarea {
+    background:#eee;
+    border:0;
+    padding:5px;
+    font-size:20px;
+    width:753px;
+}
+
+#tweet_form button {
+    float:right;
+    font-size:14px;
+    margin-top:10px;
+}
+
+.command {
+    font-family:courier, monospace;
+    font-size:10px;
+}
+
+.status {
+    margin:10px 0;
+    overflow:auto;
+}
+
+.status img {
+    border:1px solid #ccc;
+    float:left;
+    margin-right:10px;
+}
+

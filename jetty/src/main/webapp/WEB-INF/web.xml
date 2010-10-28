@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <servlet>
+        <servlet-name>auth</servlet-name>
+        <servlet-class>net.rallyedu.lab7.servlet.AuthServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>auth</servlet-name>
+        <url-pattern>/auth</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>timeline</servlet-name>
+        <servlet-class>net.rallyedu.lab7.servlet.TimelineServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>timeline</servlet-name>
+        <url-pattern>/timeline</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>tweet</servlet-name>
+        <servlet-class>net.rallyedu.lab7.servlet.TweetServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>tweet</servlet-name>
+        <url-pattern>/tweet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>friends</servlet-name>
+        <servlet-class>net.rallyedu.lab7.servlet.FriendsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>friends</servlet-name>
+        <url-pattern>/friends</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>twitter</filter-name>
+        <filter-class>net.rallyedu.lab7.filter.TwitterFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>twitter</filter-name>
+        <url-pattern>/timeline</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>twitter</filter-name>
+        <url-pattern>/tweet</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>twitter</filter-name>
+        <url-pattern>/friends</url-pattern>
+    </filter-mapping>
+
+</web-app>
