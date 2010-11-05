@@ -5,6 +5,10 @@
  * Time: 12:54:16 PM
  * To change this template use File | Settings | File Templates.
  */
+ 
+import java.io.*; 
+import java.util.*; 
+ 
 public class Game {
     private boolean button; //indicator of whether or not a point is set 
     private int playerBal; //current balance of the player 
@@ -97,25 +101,36 @@ public class Game {
 		
 
 	}	
-    public static void main(String args[]){
-		int[] myBets = new int[] {10};
-		//while (toPlay)
-		//{
-			Game craps = new Game(); 
+    public static void main(String args[]) throws IOException {
+	
+		//Variable declarations
+		String str = ""; 
+		int[] myBets = new int[1]; //The size of this array will change as we implement more bets
+		Game craps = new Game();
+		int betInput = 0;
+		
+		//Get user input and save input into betInput
+		BufferedReader keyboard = 
+			new BufferedReader(new InputStreamReader(System.in)); 
+		
+		System.out.println ("Current balance = " + craps.playerBal);
+		System.out.println("Please enter the amount you would like to bet for the Passline Bet: "); 
+		str = keyboard.readLine();
+		
+		while (!str.equals(""))
+		{
+			betInput = Integer.parseInt(str);
+			
+			//Populate myBets array 
+			myBets[0] = betInput;
+			 
 			System.out.println("\nPlayer Balance start " + craps.getPlayerBal()); 
 			craps.setPlayerBets(myBets); //populate the different bet objects
 			craps.playRound(); 
 			System.out.println("\nPlayer Balance end " + craps.getPlayerBal());
 			System.out.println("Point " + craps.getPoint()); 
-		//}
-		
-		
-		//While user wants to play craps, ask user if they want to continue playing craps
-		/*
-        //Start of Game
-        craps.dice.roll();
-        craps.processRole();
-		*/
-
+			System.out.println("Please enter amount (Press enter to exit): ");
+			str=keyboard.readLine();
+		}
     }
 }

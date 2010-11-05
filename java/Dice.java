@@ -5,14 +5,6 @@
  * Time: 12:39:14 PM
  * To change this template use File | Settings | File Templates.
  */
-/**
- * Created by IntelliJ IDEA.
- * User: zachmanc
- * Date: Oct 14, 2010
- * Time: 7:50:54 PM
- * To change this template use File | Settings | File Templates.
- */
-
 import java.util.Random;
 
 
