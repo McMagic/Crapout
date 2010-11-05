@@ -30,7 +30,8 @@ public class passLine extends Bet {
 				}
                 else if (sum == point){
 					//payout is set to my bet amount and bet amount remains the same
-                    setPayOut(getBetAmount()); 
+                    setPayOut(2*getBetAmount());
+					setBetAmount(0);
 				}
                 else {
 					//payout is set to 0 and bet amount remains the same 
