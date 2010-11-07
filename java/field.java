@@ -5,9 +5,9 @@
  * Time: 7:58:19 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Field extends Bet {
+public class field extends Bet {
 
-    public Field(int amount) {
+    public field(int amount) {
         this.betAmount = amount;
         this.payOut = 0;
         this.active = true;
@@ -25,7 +25,7 @@ public class Field extends Bet {
 				setPayOut(3*getBetAmount());
 				setBetAmount(0);
 			}
-			else if (sum == 12){
+			else if (sum == 12) {
 				/* This pays double */
 				setPayOut(3*getBetAmount());
 				setBetAmount(0);
