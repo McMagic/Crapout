@@ -25,12 +25,12 @@ public class field extends Bet {
 				setPayOut(3*getBetAmount());
 				setBetAmount(0);
 			}
-			else if (sum == 12) {
+			else if (sum == 12){
 				/* This pays double */
 				setPayOut(3*getBetAmount());
 				setBetAmount(0);
 			}
-			else if (sum == 3 | sum == 4 | sum == 9 | sum == 10 | sum == 11){
+			else if (sum == 3 || sum == 4 || sum == 9 || sum == 10 || sum == 11){
 				/* This pays single */
 				setPayOut(2*getBetAmount());
 				setBetAmount(0);
@@ -41,6 +41,7 @@ public class field extends Bet {
 			}
 
 		}
+	}
 
 
 }
