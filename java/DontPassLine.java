@@ -24,7 +24,8 @@ public class DontPassLine extends Bet {
 	public void checkBetOutcome(int[] rollArray, boolean active, int point){
 		int rollSum = rollArray[0] + rollArray[1];
 		
-
+		int[] amt = new int[1];
+		amt[0] = 0;
 		//Bet is not valid at this point. Return 0
 		if(active == false){
 		}
@@ -36,13 +37,13 @@ public class DontPassLine extends Bet {
 				//7 rolled before point, player WINS 
 					System.out.println("Don't pass line bets WINS");
 					setPayOut(2*getBetAmount()); 
-					System.out.println("don't pass line getPayOut after getting Craps: " + getPayOut());
-					setBetAmount(0);
+					System.out.println("don't pass line get: PayOut after getting Craps: " + getPayOut());
+					setBetAmount(amt);
 				}
 				else if (rollSum == point){
 				//Point is rolled before 7, player LOSES 
 					setPayOut(0); 
-					setBetAmount(0);
+					setBetAmount(amt);
 				}
 				else if (rollSum != 7 && rollSum != point){
 					System.out.println("Am i in last else statement");
@@ -54,7 +55,7 @@ public class DontPassLine extends Bet {
 				if (rollSum == 7 || rollSum == 11){
 				//7 or 11 is rolled on come-out roll, player LOSES
 					setPayOut(0); 
-					setBetAmount(0);
+					setBetAmount(amt);
 				}
 				
 				else if (rollSum == 2 || rollSum == 3 ||  rollSum == 12){

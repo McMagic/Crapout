@@ -16,6 +16,9 @@ public class field extends Bet {
 
     public void checkBetOutcome(int[] rollArray, boolean active, int point){
         int sum = rollArray[0] + rollArray[1];
+        
+        int[] betAmt = new int[1];
+        
         if(active == false){
            // return 0;
         }
@@ -23,21 +26,25 @@ public class field extends Bet {
 			if (sum == 2) {
 				/* This pays double */
 				setPayOut(3*getBetAmount());
-				setBetAmount(0);
+				
+				betAmt[0] = 0;
+				setBetAmount(betAmt);
 			}
 			else if (sum == 12){
 				/* This pays double */
 				setPayOut(3*getBetAmount());
-				setBetAmount(0);
+				betAmt[0] = 0;
+				setBetAmount(betAmt);
 			}
 			else if (sum == 3 || sum == 4 || sum == 9 || sum == 10 || sum == 11){
 				/* This pays single */
 				setPayOut(2*getBetAmount());
-				setBetAmount(0);
+				betAmt[0] = 0;
+				setBetAmount(betAmt);
 			}
 			else {
-				setBetAmount(0);
-				setPayOut(0);
+				betAmt[0] = 0;
+				setBetAmount(betAmt);
 			}
 
 		}

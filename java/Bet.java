@@ -20,9 +20,17 @@ public abstract class Bet {
 	public void setPayOut(int pay){
 		payOut = pay;
 	}
-	public void setBetAmount(int bet){
-		betAmount = bet;
+	
+	
+	//NOTE: This function now takes an array as opposed to a value
+	//This is because is its overwritten in the placeBet class
+	public void setBetAmount(int[] bet){
+		betAmount = bet[0];
 	}
+	
+	
+	
+	
 	public void setActive(boolean b){
 		active = b; 
 	}

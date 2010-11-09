@@ -17,23 +17,27 @@ public class passLine extends Bet {
     public void checkBetOutcome(int[] rollArray, boolean active, int point){
         int sum = rollArray[0] + rollArray[1];
 		
+		int[] betAmt = new int[1];
+		
         if(active == false){
            // return 0;
         }
         else {
-			System.out.println("Point is " + point);
 			//If Button is on, meaning point HAS been set
             if(point != 0){
                 if(sum == 7) { //If 7 is rolled, player loses 
 					//payout is set to 0 and bet amount is set to 0
-                    setPayOut(0); 
-					setBetAmount(0);
+                    setPayOut(0);
+                    
+                    betAmt[0] = 0;
+					setBetAmount(betAmt);
 					System.out.println("Crap out!");
 				}
                 else if (sum == point){ //If point is rolled, player wins
 					//payout is set to my bet amount and bet amount remains the same
                     setPayOut(2*getBetAmount());
-					setBetAmount(0); //dunno if this should be 0
+					betAmt[0] = 0;
+					setBetAmount(betAmt);
 					System.out.println("Winner!");
 				}
                 else {
@@ -46,14 +50,16 @@ public class passLine extends Bet {
             else if (point == 0){
                 if(sum == 7 || sum == 11){	//If 7 or 11 is rolled then player wins
 					setPayOut(2*getBetAmount());
-					setBetAmount(0);
+					betAmt[0] = 0;
+					setBetAmount(betAmt);
 					//System.out.println("Bet amount is "+ getBetAmount());
 					System.out.println("7 or 11 is rolled and Player wins! " + getPayOut());
 					
                 }
                 else if(sum == 2 || sum == 3 || sum == 12){ 	//If 2, 3 or 12 is rolled then player loses
 					setPayOut(0);
-					setBetAmount(0);
+					betAmt[0] = 0;
+					setBetAmount(betAmt);
 					System.out.println("2, 3, or 12 is rolled and Player loses! ");
 				}
             }
