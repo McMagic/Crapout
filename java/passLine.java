@@ -23,6 +23,8 @@ public class passLine extends Bet {
            // return 0;
         }
         else {
+			//reset payout
+			setPayOut(0);
 			//If Button is on, meaning point HAS been set
             if(point != 0){
                 if(sum == 7) { //If 7 is rolled, player loses 

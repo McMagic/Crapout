@@ -12,12 +12,12 @@
  */
  
  
-public class DontCome extends Bet {
+public class Come extends Bet {
 	//Instance variable 
-	int state; //(0 means not active, 1 means dont come point is not set, 2 means dont come point is set)
+	int state; //(0 means not active, 1 means come point is not set, 2 means come point is set)
 	
 	//Default constructor 
-	public DontCome (int amount){
+	public Come (int amount){
 		this.betAmount = amount;
 		this.payOut = 0; 
 		this.active = false; 
@@ -52,16 +52,15 @@ public class DontCome extends Bet {
 			/** Come Point HAS been set **/ 
 			if ((comePoint != 0) && (state == 2)){
 				//Shooter rolls 7 before dont come point. WINS 
-				if (rollSum == 7){
-					System.out.println("Don't Come bet WINS"); 
+				if (rollSum == comePoint){
+					System.out.println("Come bet WINS"); 
 					setPayOut(2*getBetAmount()); //set payout to winning of 1:1
 					System.out.println("Don't come bet PayOut: " + getPayOut());
 					setBetAmount(amt);	//set bet amount to 0 
-					System.out.println("bet amount after winning: " + getBetAmount());
 				}
 				//Shooter rolls don't come point before 7. LOSES
-				else if (rollSum == comePoint){
-					System.out.println("Don't Come bet LOSES"); 
+				else if (rollSum == 7){
+					System.out.println("Come bet LOSES"); 
 					setPayOut(0); //set payout to 0 
 					setBetAmount(amt); //set bet amount to 0 
 				}
@@ -73,16 +72,16 @@ public class DontCome extends Bet {
 			
 			/** Come Point HAS NOT been set **/
 			else if ((comePoint == 0) && (state == 1)){
-				//Shooter rolls a 2 or 3 on come-out roll for come point, player WINS
-				if (rollSum == 2 || rollSum == 3){
-					setPayOut(getBetAmount()); //set payout to betAmount (winnings: 1:1)
-					//Bet still stays on the table
+				//Shooter rolls a 23, or 12 on come-out roll for come point, player LOSES
+				if (rollSum == 2 || rollSum == 3 || rollSum == 12){
+					setPayOut(0); //set payout to 0
+					setBetAmount(amt);
 				}
 				
 				//Shooter rolls a 7 or 11 on come-out roll for come point, player LOSES 
 				else if (rollSum == 7 || rollSum == 11) {
-					setPayOut(0); //set payout to 0
-					setBetAmount(amt); //Set bet amount to 0
+					setPayOut(getBetAmount()); //set payout to betAmount (winnings: 1:1)
+					//Set bet remains on table
 				}
 				else{
 					setPayOut(0);

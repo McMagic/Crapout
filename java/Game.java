@@ -15,12 +15,14 @@ public class Game {
     private Dice dice; //dice
     private int point; //point 
 	private int dontComePoint; //point set for Don't Come bets
+	private int comePoint; //Point set for come point bets
 	private passLine passLineBet; //pass line bet (betID = 0)
 	private DontPassLine dontPassLineBet; //dont pass line bet (betID = 1)
 	private placeBet placeBets; //Place bets (betID = 2)
 	private DontCome dontComeBet; //Dont come bet (betID = 3)
 	private Hardway hardwayBet; //Hardway bet (betID = 4)
 	private Proposition propBets; //Proposition (betID = 5)
+	private Come comeBet; //Come bet (betID = 6)
 
 
 
@@ -31,6 +33,7 @@ public class Game {
         this.dice = new Dice();
         this.point = 0;
 		this.dontComePoint = 0;
+		this.comePoint = 0;
         
         //Create instances of each bet class
 		passLineBet = new passLine(0);
@@ -39,6 +42,7 @@ public class Game {
 		dontComeBet = new DontCome(0);
 		hardwayBet = new Hardway();
 		propBets = new Proposition();
+		comeBet = new Come(0);
     }
 	
 	//Getters 
@@ -57,6 +61,9 @@ public class Game {
 	public int getDontComePoint(){
 		return dontComePoint;
 	}
+	public int getComePoint(){
+		return comePoint;
+	}
 	
 	
 	//Setters 
@@ -71,6 +78,9 @@ public class Game {
     }
 	public void setDontComePoint(int newPoint){
 		dontComePoint = newPoint;
+	}
+	public void setComePoint(int newPoint){
+		comePoint = newPoint;
 	}
 
 	public void setActiveBets(){
@@ -126,6 +136,10 @@ public class Game {
 				propBets.setBetAmount(betAmt); 
 				playerBal -= betAmt[0] + betAmt[1] + betAmt[2] + betAmt[3] + betAmt[4] +betAmt[5];
 				break;
+			case 6: //Come bet 
+				comeBet.setBetAmount(betAmt);
+				playerBal -= betAmt[0]; 
+				break;
 		}
 		
 		
@@ -139,7 +153,7 @@ public class Game {
 		System.out.println("Current player's don't pass line bet amount: $" + dontPassLineBet.getBetAmount());
 		
 		
-		
+
 		//Place Bets
 		System.out.println("Current player's place bet amounts:");
 		System.out.println("----Money on 4: $" + placeBets.getMoneyOnFour() );
@@ -149,9 +163,12 @@ public class Game {
 		System.out.println("----Money on 9: $" + placeBets.getMoneyOnNine() );
 		System.out.println("----Money on 10: $" + placeBets.getMoneyOnTen() );
 
+		//Come bet
+		System.out.println("");
+		System.out.println("Come bet amount: $" + comeBet.getBetAmount());
 		//Don't come bet 
 		System.out.println("Current player's don't come bet amount: $" +dontComeBet.getBetAmount());
-		
+		System.out.println("");
 		
 		//Hardway Bet
 		System.out.println("Current player's hardway bet amounts:");
@@ -170,7 +187,7 @@ public class Game {
 		System.out.println("----Money on Craps Twelve: $" + propBets.getCrapsTwelveMoney() );
 		System.out.println("----Money on Yo Eleven: $" + propBets.getYoElevenMoney() );
 
-		
+
 	}
 	
 	public void getPlayerBetsOutcome(int[] rollArray){
@@ -180,11 +197,13 @@ public class Game {
 		dontComeBet.checkBetOutcome(rollArray, button, dontComePoint);
 		hardwayBet.checkBetOutcome(rollArray, button, point);
 		propBets.checkBetOutcome(rollArray, button, point);
+		comeBet.checkBetOutcome(rollArray, button, comePoint);
 	}
 	
 	public void getPlayerBetsPayOut(){
 		int payout = 0; 
-		
+		//Debug
+		System.out.println("");
 		//Update with payout from pass line bet 
 		payout += passLineBet.getPayOut(); 
 		System.out.println("Payout from passLine: " + passLineBet.getPayOut());
@@ -210,9 +229,15 @@ public class Game {
 		payout += propBets.getPayOut(); 
 		System.out.println("Payout from proposition bets: " + propBets.getPayOut());
 		
+		//Update with payout from come bet 
+		payout += comeBet.getPayOut(); 
+		System.out.println("Payout from come bet: " + comeBet.getPayOut()); 
 		
 		//Increment payout for all other bets.... 
 		playerBal += payout; 
+		
+		//Debug
+		System.out.println("");
 		
 	}
 	
@@ -234,10 +259,7 @@ public class Game {
          	myBets[x] = 0;
 		}
 		
-		
-		
-		if (betID == 0) //Pass Line Bet
-		{
+		if (betID == 0){ //Pass Line Bet
 			//Populate pass line bet 
 			System.out.println("Please enter the amount for the Pass Line bet: ");
 			str = keyboard.readLine();
@@ -245,8 +267,7 @@ public class Game {
 			myBets[0] = betInput; 
 			return myBets;
 		} //End of Pass Line Bet
-		else if (betID == 1) //Don't Pass Line Bet
-		{
+		else if (betID == 1){ //Don't Pass Line Bet
 			//Populate don't pass line bet
 			System.out.println("Please enter the amount for the Don't Pass Line Bet: ");
 			str = keyboard.readLine(); 
@@ -254,8 +275,7 @@ public class Game {
 			myBets[0] = betInput;
 			return myBets;
 		} //End of Don't Pass Line Bet
-		else if (betID == 2) //Place Bets
-		{
+		else if (betID == 2){ //Place Bets
 			//Reset str back to NULL string
 			str = "";
 			
@@ -313,8 +333,13 @@ public class Game {
 			System.out.println("Please enter the amount for the Don't Come Bet: ");
 			str = keyboard.readLine(); 
 			betInput = Integer.parseInt(str);
-			myBets[0] = betInput;
-			dontComeBet.setState(1); //activate the dontComeBet
+			if (betInput > 0){
+				myBets[0] = betInput;
+				dontComeBet.setState(1); //activate the dontComeBet
+			}
+			else{
+				dontComeBet.setState(0);
+			}
 			return myBets;
 		}
 		else if (betID == 4){	//Hardway Bets
@@ -418,14 +443,25 @@ public class Game {
 			
 			return myBets;
 		}
-		
+		else if (betID == 6){ 	//Come bet
+			//Populate come bet
+			System.out.println("Please enter amount for the Come Bet: "); 
+			str = keyboard.readLine();
+			betInput = Integer.parseInt(str); 
+			if (betInput > 0){
+				myBets[0] = betInput; 
+				comeBet.setState(1);	//activate the come bet 
+			}
+			else{
+				comeBet.setState(0);
+			}
+			return myBets; 
+		}
 		
 		return myBets; //Default return statement
 	}
 	
-	
-	
-	
+
 	public void playRound(){
 		
 		dice.roll(); //roll the dice 
@@ -435,10 +471,12 @@ public class Game {
 		
 		//Testing 
 		int[] diceArray = dice.getRollArray();
+		System.out.println("***Dice Roll ***");
 		System.out.println("Die 1 = " + diceArray[0]);
 		System.out.println("Die 2 = " + diceArray[1]);
-		int diceVal = diceArray[0] + diceArray[1];
+		System.out.println("");
 		
+		int diceVal = diceArray[0] + diceArray[1];
 		if (point == 0) { //Set point if valid roll 
 			//If dice roll is valid, set the point 
 			if (diceVal != 7 && diceVal != 11 && diceVal !=2 && diceVal != 3 && diceVal != 12){
@@ -457,22 +495,48 @@ public class Game {
 		
 		//Setting the don't come point 
 		if ((dontComePoint == 0) && (dontComeBet.getState() == 1)){
-			if (diceVal  != 2 && diceVal != 3 && diceVal != 7 && diceVal != 12){
-				System.out.println("Setting don't come point"); 
+			if (diceVal  != 2 && diceVal != 3 && diceVal != 7 && diceVal != 12 && diceVal !=11){ 
 				dontComePoint = diceVal;
+				System.out.println("Setting don't come point: " + dontComePoint);
 				dontComeBet.setState(2);
 			}
 		}
 		//Reset dont come point to 0 if 7 is rolled
 		else if ((dontComePoint != 0) && (dontComeBet.getState() == 2) && (diceVal == 7)){
 			dontComePoint = 0;
+			System.out.println("Re-Setting don't come point: " + dontComePoint);
 			dontComeBet.setState(0);
 		}
 		//Reset dont come point to 0 if dont come point is rolled
 		else if ((dontComePoint != 0) && (dontComeBet.getState() == 2) && (diceVal == dontComePoint)){
 			dontComePoint = 0;
+			System.out.println("Re-Setting don't come point: " + dontComePoint);
 			dontComeBet.setState(0);
 		}
+		
+		//Setting the come point 
+		if ((comePoint == 0) && (comeBet.getState() == 1)){
+			if (diceVal  != 2 && diceVal != 3 && diceVal != 7 && diceVal != 12 && diceVal !=11){ 
+				comePoint = diceVal;
+				System.out.println("Setting come point: " + comePoint);
+				dontComeBet.setState(2);
+			}
+		}
+		//Reset dont come point to 0 if 7 is rolled
+		else if ((comePoint != 0) && (comeBet.getState() == 2) && (diceVal == 7)){
+			comePoint = 0;
+			System.out.println("Re-Setting come point: " + comePoint);
+			dontComeBet.setState(0);
+		}
+		//Reset dont come point to 0 if dont come point is rolled
+		else if ((comePoint != 0) && (comeBet.getState() == 2) && (diceVal == comePoint)){
+			comePoint = 0;
+			System.out.println("Re-Setting come point: " + comePoint);
+			comeBet.setState(0);
+		}
+		
+		
+		
 	}	
 	
     public static void main(String args[]) throws IOException {
@@ -511,11 +575,17 @@ public class Game {
 					myBets = craps.getBetInput(2);
 					craps.setPlayerBets(myBets, 2);
 					
+					//Set the come bet 
+					if (craps.comeBet.getState() == 0){
+						myBets = craps.getBetInput(6);
+						craps.setPlayerBets(myBets, 6);
+					}
 					//Set the don't come bet 
 					if (craps.dontComeBet.getState() == 0){
 						myBets = craps.getBetInput(3); 
 						craps.setPlayerBets(myBets, 3);
 					}
+					
 					
 					
 				}
@@ -543,6 +613,9 @@ public class Game {
 				System.out.println("********************** ROUND STARTS HERE ***************************");
 				System.out.println("Player's bet amounts before round:");
 				craps.printPlayerBets();
+				System.out.println("*********DEBUG***********");
+				System.out.println("state of don't come: " + craps.dontComeBet.getState());
+				System.out.println("state of come: " + craps.comeBet.getState());
 				System.out.println(); //Prints an empty line for readability purposes
 				System.out.println("Player Balance before roll " + craps.getPlayerBal()); 
 				System.out.println("********************** ROUND PLAYED ***************************");

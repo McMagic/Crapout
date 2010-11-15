@@ -31,6 +31,8 @@ public class DontPassLine extends Bet {
 		}
 
 		else{
+			//reset payout
+			setPayOut(0);
 			/** Point HAS been set **/ 
 			if (point != 0){
 				if (rollSum == 7){
