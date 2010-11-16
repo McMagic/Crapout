@@ -23,6 +23,7 @@ public class Game {
 	private Hardway hardwayBet; //Hardway bet (betID = 4)
 	private Proposition propBets; //Proposition (betID = 5)
 	private Come comeBet; //Come bet (betID = 6)
+	private field fieldBet; //Field (betID = 7)
 
 
 
@@ -43,6 +44,7 @@ public class Game {
 		hardwayBet = new Hardway();
 		propBets = new Proposition();
 		comeBet = new Come(0);
+		fieldBet = new field(0);
     }
 	
 	//Getters 
@@ -140,6 +142,10 @@ public class Game {
 				comeBet.setBetAmount(betAmt);
 				playerBal -= betAmt[0]; 
 				break;
+			case 7: //Field Bet
+				fieldBet.setBetAmount(betAmt);
+				playerBal -= betAmt[0];
+				break;
 		}
 		
 		
@@ -187,6 +193,9 @@ public class Game {
 		System.out.println("----Money on Craps Twelve: $" + propBets.getCrapsTwelveMoney() );
 		System.out.println("----Money on Yo Eleven: $" + propBets.getYoElevenMoney() );
 
+		//Field Bet
+	 	System.out.println("Current player's field bet amount: $" + fieldBet.getBetAmount());
+
 
 	}
 	
@@ -198,6 +207,7 @@ public class Game {
 		hardwayBet.checkBetOutcome(rollArray, button, point);
 		propBets.checkBetOutcome(rollArray, button, point);
 		comeBet.checkBetOutcome(rollArray, button, comePoint);
+		fieldBet.checkBetOutcome(rollArray, button, point);
 	}
 	
 	public void getPlayerBetsPayOut(){
@@ -232,6 +242,10 @@ public class Game {
 		//Update with payout from come bet 
 		payout += comeBet.getPayOut(); 
 		System.out.println("Payout from come bet: " + comeBet.getPayOut()); 
+			
+		//Update with payout from fieldBet
+		payout += fieldBet.getPayOut(); 
+		System.out.println("Payout from field bet: " + fieldBet.getPayOut());
 		
 		//Increment payout for all other bets.... 
 		playerBal += payout; 
@@ -456,7 +470,15 @@ public class Game {
 				comeBet.setState(0);
 			}
 			return myBets; 
+		} else if (betID == 7) { //Field bet
+			//Populate field bet
+			System.out.println("Please enter the amount for the Field Bet: ");
+			str = keyboard.readLine(); 
+			betInput = Integer.parseInt(str);
+			myBets[0] = betInput;
+			return myBets;
 		}
+		
 		
 		return myBets; //Default return statement
 	}
@@ -600,10 +622,9 @@ public class Game {
 				myBets = craps.getBetInput(5);
 				craps.setPlayerBets(myBets, 5);
 
-				
-				
-				
-				
+				//Set the Field Bet (can be made at anytime)
+				myBets = craps.getBetInput(7);
+				craps.setPlayerBets(myBets, 7);
 				
 				
 				

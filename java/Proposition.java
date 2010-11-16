@@ -133,49 +133,52 @@ public class Proposition extends Bet {
         
 		//Any Seven
 		if((sum == 7) && (anySevenMoney > 0) ) {
+				//4 to 1 payout for Any 7
 				System.out.println("Won money on Any 7.");
 				//payout is set to 0 and bet amount is set to 0
-				setPayOut(4 * anySevenMoney); 
+				setPayOut(5 * anySevenMoney); 
 				
 		}
 		//If the Dice Roll is 2
 		else if (sum == 2) {
+			//30 to 1 payout for Craps 2
+			//7 to 1 payout for Any Craps
 			if ((crapsTwoMoney > 0) && (anyCrapsMoney > 0)) { //If both Craps 2 and Any Craps bets on table
 				System.out.println("Won money on Craps 2.");
 				System.out.println("Won money on Any Craps.");
-				setPayOut((30 * crapsTwoMoney) + (7 * anyCrapsMoney)); 
+				setPayOut((31 * crapsTwoMoney) + (8 * anyCrapsMoney)); 
 
 			}
 			else if ((crapsTwoMoney > 0) && (anyCrapsMoney <= 0)) { //If only Craps 2 money on the table
 				System.out.println("Won money on Craps 2.");
-				setPayOut(30 * crapsTwoMoney); 
+				setPayOut(31 * crapsTwoMoney); 
 
 			}
 			else if((crapsTwoMoney <= 0) && (anyCrapsMoney > 0)) { //If only an Any Craps bet is on the table
 				System.out.println("Won money on Any Craps.");
-				setPayOut(7 * anyCrapsMoney); 
+				setPayOut(8 * anyCrapsMoney); 
 
 			}
 			
 		}
 		//If Dice Roll is three 3
 		else if (sum == 3) {
+			//15 to 1 payout for Craps 3
+			//7 to 1 payout for Any Craps
 			if ((crapsThreeMoney > 0) && (anyCrapsMoney > 0)) { //If both Craps 3 and Any Craps bets on table
 				System.out.println("Won money on Craps 3.");
 				System.out.println("Won money on Any Craps.");
-				setPayOut((15 * crapsThreeMoney) + (7 * anyCrapsMoney)); 
-
-
+				setPayOut((16 * crapsThreeMoney) + (8 * anyCrapsMoney)); 
 				
 			}
 			else if ((crapsThreeMoney > 0) && (anyCrapsMoney <= 0)) { //If only Craps 3 money on the table
 				System.out.println("Won money on Craps 3.");
-				setPayOut(15 * crapsThreeMoney); 
+				setPayOut(16 * crapsThreeMoney); 
 
 			}
 			else if((crapsThreeMoney <= 0) && (anyCrapsMoney > 0)) { //If only an Any Craps bet is on the table
 				System.out.println("Won money on Any Craps.");
-				setPayOut(7 * anyCrapsMoney); 
+				setPayOut(8 * anyCrapsMoney); 
 
 			}
 			
@@ -183,20 +186,22 @@ public class Proposition extends Bet {
 		}
 		//If Dice Roll is 12
 		else if (sum == 12) {
+			//30 to 1 payout for Craps 12
+			//7 to 1 payout for Any Craps
 			if ((crapsTwelveMoney > 0) && (anyCrapsMoney > 0)) { //If both Craps 12 and Any Craps bets on table
 				System.out.println("Won money on Craps 12.");
 				System.out.println("Won money on Any Craps.");
-				setPayOut((30 * crapsTwelveMoney) + (7 * anyCrapsMoney)); 
+				setPayOut((31 * crapsTwelveMoney) + (8 * anyCrapsMoney)); 
 				
 			}
 			else if ((crapsTwelveMoney> 0) && (anyCrapsMoney <= 0)) { //If only Craps 12 money on the table
 				System.out.println("Won money on Craps 12.");
-				setPayOut(30 * crapsTwelveMoney); 
+				setPayOut(31 * crapsTwelveMoney); 
 
 			}
 			else if((crapsTwelveMoney <= 0) && (anyCrapsMoney > 0)) { //If only an Any Craps bet is on the table
 				System.out.println("Won money on Any Craps.");
-				setPayOut(7 * anyCrapsMoney); 
+				setPayOut(8 * anyCrapsMoney); 
 
 			}
 			
@@ -204,8 +209,9 @@ public class Proposition extends Bet {
 		}
 		//If Dice Roll is 11
 		else if ((sum == 11) && (yoElevenMoney > 0)) {
+			//15 to 1 payout for Yo Eleven
 			System.out.println("Won money on Yo Eleven.");
-			setPayOut(15 * yoElevenMoney); 
+			setPayOut(16 * yoElevenMoney); 
 			
 		}
 		

@@ -43,6 +43,7 @@ public class field extends Bet {
 				setBetAmount(betAmt);
 			}
 			else {
+				/* Loose all of your money if any other roll is made */
 				betAmt[0] = 0;
 				setBetAmount(betAmt);
 			}
