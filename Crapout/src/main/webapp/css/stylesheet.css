@@ -1,0 +1,49 @@
+body {
+	background: #00547d url(../images/bg.jpg) repeat-x 0 0;
+	color: #cccccc;
+	font: 14px 'Lucida Grande', sans-serif;
+}
+
+#header { margin-bottom: 20px; }
+
+.container {  width: 1024px; margin-left: auto; margin-right: auto; padding: 10px;  }
+.container a {  color: #249eca; text-decoration: none;  }
+.container a:hover {  text-decoration: underline;  }
+.container img {  display:block; margin-left: auto; margin-right: auto; padding: 10px; border: 0;  }
+.container #menu {  border: 1px solid #249eca; width: 1024px; height: 30px; float: left; display: inline; line-height: 28px; font-size: 20px;  }
+.container #menu a:link, .wtonfb #menu a:visited {  text-decoration: none;  }
+.container #menu a:hover {  text-decoration: underline;  }
+.container #nav_link {  width: 200px; float: left; text-align: center;  }
+.container #nav_link a:link, .container #nav_link a:visited {  width: 200px; font-weight: bold;  }
+
+#content {
+    overflow: auto;
+}
+
+#tweet_form {
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+#tweet_form textarea {
+    background: #eeeeee;
+    border: 0;
+    padding: 5px;
+    font-size: 20px;
+    width: 753px;
+}
+
+#tweet_form button {
+    float: right;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.command {
+    font-family: courier, monospace;
+    font-size: 10px;
+}
+
+.status {  margin: 10px 0; overflow: auto;  }
+.status img {  border: 1px solid #ccc; float: left; margin-right: 10px;  }
+
