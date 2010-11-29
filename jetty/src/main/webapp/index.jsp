@@ -1,1 +1,1 @@
-<% response.sendRedirect("timeline"); %>
+<% response.sendRedirect("home"); %>

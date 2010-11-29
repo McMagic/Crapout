@@ -6,21 +6,24 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title><c:out value="${title != null ? title : 'Jittr'}"/></title>
-        <link rel="stylesheet" href="<c:url value="/css/jittr.css"/>"/>
-    </head>
-    <body>
-        <div id="container">
-            <div id="header">
-                <a href="<c:url value="/"/>"><img src="<c:url value="/images/jittr.jpg"/>"/></a>
-            </div>
-            <div id="content">
-                <jsp:invoke fragment="content"/>
-            </div>
-            <div id="footer">
-                Rally + CU = <a href="http://www.rallyedu.net">RallyEDU.net</a>
-            </div>
-        </div>
-    </body>
+	<head>
+		<title>CrapOut!</title>
+		<link type="text/css" rel="stylesheet" href="<c:url value="/css/stylesheet.css"/>"/>
+	</head>
+	<body>
+		<div class="container">
+			<div id="header">
+				<a href="<c:url value="/"/>"><img src="<c:url value="/images/banner.png"/>"/></a>
+			</div>
+			<div id="menu">
+				<div id="nav_link"><a href="<c:url value="/home"/>"/>Home</a></div>
+				<div id="nav_link"><a href="<c:url value="/rules"/>"/>Rules</a></div>
+				<div id="nav_link"><a href="<c:url value="/odds"/>"/>Odds</a></div>
+				<div id="nav_link"><a href="<c:url value="/game"/>"/>Start Game</a></div>
+			</div>
+			<div id="content">
+				<jsp:invoke fragment="content"/>
+			</div>
+		</div>
+	</body>
 </html>
