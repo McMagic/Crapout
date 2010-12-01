@@ -5,6 +5,8 @@
  * Time: 12:39:14 PM
  * To change this template use File | Settings | File Templates.
  */
+package net.rallyedu.Crapout;
+
 import java.util.Random;
 
 

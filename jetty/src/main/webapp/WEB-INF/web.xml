@@ -34,13 +34,13 @@
 		<servlet-name>game</servlet-name>
 		<url-pattern>/game</url-pattern>
 	</servlet-mapping>
-<!--	<servlet>
-		<servlet-name>add</servlet-name>
-		<servlet-class>net.rallyedu.CrapOut.AddServlet</servlet-class>
+	<servlet>
+		<servlet-name>roll</servlet-name>
+		<servlet-class>net.rallyedu.Crapout.RollServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>add</servlet-name>
-		<url-pattern>/add</url-pattern>
+		<servlet-name>roll</servlet-name>
+		<url-pattern>/roll</url-pattern>
 	</servlet-mapping>
--->
+
 </web-app>

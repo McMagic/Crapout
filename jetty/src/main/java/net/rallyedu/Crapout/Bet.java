@@ -5,10 +5,13 @@
  * Time: 12:53:14 PM
  * To change this template use File | Settings | File Templates.
  */
+
+package net.rallyedu.Crapout;
+
 public abstract class Bet {
     protected int payOut;
-    protected int betAmount;
     protected boolean active;
+    protected int betAmount;
 
     public Bet(){
         this.payOut = 0;
@@ -35,12 +38,12 @@ public abstract class Bet {
 		active = b; 
 	}
 	
-	//Getters 
+	//Getters
 	public int getPayOut(){
 		return payOut;
 	}
 	public int getBetAmount(){
-		return betAmount; 
+		return betAmount;
 	}
 	public boolean getActive(){
 		return active; 

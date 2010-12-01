@@ -5,6 +5,9 @@
  * Time: 7:58:19 PM
  * To change this template use File | Settings | File Templates.
  */
+
+package net.rallyedu.Crapout;
+
 public class Hardway extends Bet {
 	
 	//These variables keep track of the amount of money placed on a particular bet number
