@@ -5,6 +5,9 @@
  * Time: 7:58:19 PM
  * To change this template use File | Settings | File Templates.
  */
+
+package net.rallyedu.Crapout;
+
 public class field extends Bet {
 
     public field(int amount) {

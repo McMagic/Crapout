@@ -13,7 +13,7 @@
 	<body>
 		<div class="container">
 			<div id="header">
-				<a href="<c:url value="/"/>"><img src="<c:url value="/images/banner.png"/>"/></a>
+				<a href="<c:url value="/"/>"><img id="header" src="<c:url value="/images/banner.png"/>"/></a>
 			</div>
 			<div id="menu">
 				<div id="nav_link"><a href="<c:url value="/home"/>"/>Home</a></div>

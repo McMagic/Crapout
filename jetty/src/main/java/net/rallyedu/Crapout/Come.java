@@ -11,6 +11,7 @@
  *
  */
  
+package net.rallyedu.Crapout;
  
 public class Come extends Bet {
 	//Instance variable 

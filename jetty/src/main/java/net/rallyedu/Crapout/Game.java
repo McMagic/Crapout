@@ -5,87 +5,161 @@
  * Time: 12:54:16 PM
  * To change this template use File | Settings | File Templates.
  */
+
+package net.rallyedu.Crapout;
  
 import java.io.*; 
 import java.util.*; 
  
 public class Game {
-    private boolean button; //indicator of whether or not a point is set 
-    private int playerBal; //current balance of the player 
-    private Dice dice; //dice
-    private int point; //point 
-	private int dontComePoint; //point set for Don't Come bets
-	private int comePoint; //Point set for come point bets
-	private passLine passLineBet; //pass line bet (betID = 0)
-	private DontPassLine dontPassLineBet; //dont pass line bet (betID = 1)
-	private placeBet placeBets; //Place bets (betID = 2)
-	private DontCome dontComeBet; //Dont come bet (betID = 3)
-	private Hardway hardwayBet; //Hardway bet (betID = 4)
-	private Proposition propBets; //Proposition (betID = 5)
-	private Come comeBet; //Come bet (betID = 6)
-	private field fieldBet; //Field (betID = 7)
+    private static boolean button = true;       //indicator of whether or not a point is set
+    private static int playerBal = 1000;        //current balance of the player
+    private static Dice dice = new Dice();      //dice
+    private static int point = 0;               //point
+	private static int dontComePoint = 0; //point set for Don't Come bets
+	private static int comePoint = 0; //Point set for come point bets
+	private static passLine passLineBet = new passLine(0); //pass line bet (betID = 0)
+	private static DontPassLine dontPassLineBet = new DontPassLine(0); //dont pass line bet (betID = 1)
+	private static placeBet placeBets = new placeBet(); //Place bets (betID = 2)
+	private static DontCome dontComeBet = new DontCome(0); //Dont come bet (betID = 3)
+	private static Hardway hardwayBet = new Hardway(); //Hardway bet (betID = 4)
+	private static Proposition propBets = new Proposition(); //Proposition (betID = 5)
+	private static Come comeBet = new Come(0); //Come bet (betID = 6)
+	private static field fieldBet = new field(0); //Field (betID = 7)
 
 
-
-	//Default constructor 
+	//Default constructor
+    /*
 	public Game() {
-        this.button = true;
-        this.playerBal = 1000;
-        this.dice = new Dice();
-        this.point = 0;
-		this.dontComePoint = 0;
-		this.comePoint = 0;
-        
-        //Create instances of each bet class
-		passLineBet = new passLine(0);
-		dontPassLineBet = new DontPassLine(0);
-		placeBets = new placeBet();
-		dontComeBet = new DontCome(0);
-		hardwayBet = new Hardway();
-		propBets = new Proposition();
-		comeBet = new Come(0);
-		fieldBet = new field(0);
+
     }
-	
+	  */
 	//Getters 
-	public boolean getButton(){
+	public static boolean getButton(){
 		return button;
 	}
-	public int getPlayerBal(){
+	public static int getPlayerBal(){
 		return playerBal;
 	}
-	public Dice getDice(){
+	public static Dice getDice(){
 		return dice;
 	}
-    public int getPoint() {
+    public static int getPoint() {
         return point;
     }
-	public int getDontComePoint(){
+	public static int getDontComePoint(){
 		return dontComePoint;
 	}
-	public int getComePoint(){
+	public static int getComePoint(){
 		return comePoint;
 	}
+
+    public static int getPlaceBet(int betID){
+        	switch (betID){
+			case 0:
+				return placeBets.getMoneyOnFour();
+			case 1:
+				return placeBets.getMoneyOnFive();
+			case 2:
+				return placeBets.getMoneyOnSix();
+			case 3:
+				return placeBets.getMoneyOnEight();
+			case 4:
+				return placeBets.getMoneyOnNine();
+			case 5:
+				return placeBets.getMoneyOnTen();
+		}
+		return 0;
+	}
 	
+    public static int getPropBet(int betID){
+        	switch (betID){
+			case 0:
+				return propBets.getAnySevenMoney();
+			case 1:
+				return propBets.getAnyCrapsMoney();
+			case 2:
+				return propBets.getCrapsTwoMoney();
+			case 3:
+				return propBets.getCrapsThreeMoney();
+			case 4:
+				return propBets.getYoElevenMoney();
+			case 5:
+				return propBets.getCrapsTwelveMoney();
+		}
+		return 0;
+	}
+	
+    public static int getHardBet(int betID){
+        	switch (betID){
+			case 0:
+				return hardwayBet.getMoneyOnFour();
+			case 1:
+				return hardwayBet.getMoneyOnSix();
+			case 2:
+				return hardwayBet.getMoneyOnEight();
+			case 3:
+				return hardwayBet.getMoneyOnTen();
+		}
+		return 0;
+	}
+	
+    public static int getBet(int betID){
+        	switch (betID){
+			case 0: //Pass line bet
+				return passLineBet.getBetAmount();
+
+			case 1: //Don't pass line bet
+				return dontPassLineBet.getBetAmount();
+
+			case 2: //Make place Bets
+				return placeBets.getBetAmount();
+
+			case 3: //Make Don't Come Bet
+				return dontComeBet.getBetAmount();
+
+			case 4: //Hardway Bet
+				return hardwayBet.getBetAmount();
+
+			case 5: //Proposition Bets
+				return propBets.getBetAmount();
+
+			case 6: //Come bet
+				return comeBet.getBetAmount();
+
+			case 7: //Field Bet
+				return fieldBet.getBetAmount();
+			
+            }
+        return 0;
+    }
+
+
+    public static int getDiceVal(int index){
+        int[] diceVal;
+        diceVal = dice.getRollArray();
+        return diceVal[index];
+    }
+
 	
 	//Setters 
-	public void setButton(boolean newButton) {
+	public static void setButton(boolean newButton) {
         button = newButton;
     }
-	public void setPlayerBal(int newPlayerBal) {
+	public static void setPlayerBal(int newPlayerBal) {
         playerBal = newPlayerBal;
     }
-    public void setPoint(int newPoint) {
+    public static void setPoint(int newPoint) {
         point = newPoint;
     }
-	public void setDontComePoint(int newPoint){
+	public static void setDontComePoint(int newPoint){
 		dontComePoint = newPoint;
 	}
-	public void setComePoint(int newPoint){
+	public static void setComePoint(int newPoint){
 		comePoint = newPoint;
 	}
 
-	public void setActiveBets(){
+	public static void setActiveBets(){
 		//Check for pass line bet 
 		if (point == 0) {
 			passLineBet.setActive(true); 
@@ -109,50 +183,52 @@ public class Game {
 	 *						subtracts bet amount from player's overall balance (playerBal)
 	 * 						Note: first argument (betAmt) is an array of bet values for that specific bet
 	 */
-	public void setPlayerBets(int[] betAmt, int betID) {
+	public static void setPlayerBets(int[] betAmt, int betID) {
 		setActiveBets();
 		switch (betID){
-			case 0: //Pass line bet 
-				passLineBet.setBetAmount(betAmt); 
-				playerBal -= betAmt[0]; 
+			case 0: //Pass line bet
+				passLineBet.setBetAmount(betAmt);
+				playerBal -= betAmt[0];
 				break;
-			
-			case 1: //Don't pass line bet 
+
+			case 1: //Don't pass line bet
 				dontPassLineBet.setBetAmount(betAmt);
 				playerBal -= betAmt[0];
 				break;
-				
+
 			case 2: //Make place Bets
 				placeBets.setBetAmount(betAmt);
 				playerBal -= betAmt[0] + betAmt[1] + betAmt[2] + betAmt[3] + betAmt[4] + betAmt[5];
 				break;
-			case 3: //Make Don't Come Bet 
-				dontComeBet.setBetAmount(betAmt); 
+			case 3: //Make Don't Come Bet
+				dontComeBet.setBetAmount(betAmt);
 				playerBal -= betAmt[0];
 				break;
-			case 4: //Hardway Bet 
-				hardwayBet.setBetAmount(betAmt); 
+			case 4: //Hardway Bet
+				hardwayBet.setBetAmount(betAmt);
 				playerBal -= betAmt[0] + betAmt[1] + betAmt[2] + betAmt[3];
 				break;
-			case 5: //Proposition Bets 
-				propBets.setBetAmount(betAmt); 
+			case 5: //Proposition Bets
+				propBets.setBetAmount(betAmt);
 				playerBal -= betAmt[0] + betAmt[1] + betAmt[2] + betAmt[3] + betAmt[4] +betAmt[5];
 				break;
-			case 6: //Come bet 
+			case 6: //Come bet
 				comeBet.setBetAmount(betAmt);
-				playerBal -= betAmt[0]; 
+				playerBal -= betAmt[0];
 				break;
 			case 7: //Field Bet
 				fieldBet.setBetAmount(betAmt);
 				playerBal -= betAmt[0];
 				break;
 		}
-		
-		
+
+
 		//Remember that certain bets can only be made at certain times in the game
 	}
 	
-	public void printPlayerBets() {
+	public static void printPlayerBets() {
+        //Print current point
+        System.out.println("POINT: " + point);
 		//Pass Line 
 		System.out.println("Current player's pass line bet amount: $" + passLineBet.getBetAmount());
 		//Dont Pass Line
@@ -199,7 +275,7 @@ public class Game {
 
 	}
 	
-	public void getPlayerBetsOutcome(int[] rollArray){
+	public static void getPlayerBetsOutcome(int[] rollArray){
 		passLineBet.checkBetOutcome(rollArray, button, point); 
 		dontPassLineBet.checkBetOutcome(rollArray, button, point);
 		placeBets.checkBetOutcome(rollArray, button, point);
@@ -210,7 +286,7 @@ public class Game {
 		fieldBet.checkBetOutcome(rollArray, button, point);
 	}
 	
-	public void getPlayerBetsPayOut(){
+	public static void getPlayerBetsPayOut(){
 		int payout = 0; 
 		//Debug
 		System.out.println("");
@@ -254,9 +330,100 @@ public class Game {
 		System.out.println("");
 		
 	}
+
+    public static String getBetAmtString(int betID){
+        String output="";
+        if ( betID == 0){
+
+            output += "Pass line: " + passLineBet.getBetAmount();
+        }
+        if (betID == 1){
+
+            output += "Don't Pass line: " + dontPassLineBet.getBetAmount();
+        }
+        if (betID == 2){
+
+            output += "Place: " + placeBets.getBetAmount();
+        }
+        if (betID == 3){
+
+            output += "Don't Come: " + dontComeBet.getBetAmount();
+        }
+        if (betID == 4){
+
+            output += "Hardway: " + hardwayBet.getBetAmount();
+        }
+        if (betID == 5){
+
+            output += "Proposition: " + propBets.getBetAmount();
+        }
+        if (betID == 6){
+
+            output += "Come: " + comeBet.getBetAmount();
+        }
+        if (betID == 7){
+
+            output += "Field: " + fieldBet.getBetAmount();
+        }
+        return output;
+    }
+
+    public static String getBetPayoutString(int betID){
+        String output="";
+        if (passLineBet.getPayOut() != 0 && betID == 0){
+
+            output += "Pass line: " + passLineBet.getPayOut();
+        }
+        if (dontPassLineBet.getPayOut() != 0 && betID == 1){
+
+            output += "Don't Pass line: " + dontPassLineBet.getPayOut();
+        }
+        if (placeBets.getPayOut() != 0 && betID == 2){
+
+            output += "Place: " + placeBets.getPayOut();
+        }
+        if (dontComeBet.getPayOut() != 0 && betID == 3){
+
+            output += "Don't Come: " + dontComeBet.getPayOut();
+        }
+        if (hardwayBet.getPayOut() != 0 && betID == 4){
+
+            output += "Hardway: " + hardwayBet.getPayOut();
+        }
+        if (propBets.getPayOut() != 0 && betID == 5){
+
+            output += "Proposition: " + propBets.getPayOut();
+        }
+        if (comeBet.getPayOut() != 0 && betID == 6){
+
+            output += "Come: " + comeBet.getPayOut();
+        }
+        if (fieldBet.getPayOut() != 0 && betID == 7){
+
+            output += "Field: " + fieldBet.getPayOut();
+        }
+        return output;
+    }
+
+    public static String getCrapStatus(){
+        int[] diceArray = dice.getRollArray();
+        int diceSum = diceArray[0] + diceArray[1];
+        String msg="";
+        if (point != 0){  //If point is set
+            if (diceSum == 7){
+                msg += "SEVEN OUT!!";
+            }
+        }
+        else { //Point hasn't been set
+            if (diceSum == 2 || diceSum == 3 || diceSum ==12){
+                msg +="CRAP OUT!! You're POOR now";
+            }
+        }
+        return msg;
+    }
 	
 	//getBetInput: Used to read in bet input amounts from user, store them in an array, and return that array
-	public int[] getBetInput(int betID) throws IOException{
+	public static int[] getBetInput(int betID) throws IOException{
 		//Declare and init string variables that store user input
 		String str = ""; 
 		String amt = "";
@@ -484,7 +651,7 @@ public class Game {
 	}
 	
 
-	public void playRound(){
+	public static void playRound(){
 		
 		dice.roll(); //roll the dice 
 		getPlayerBetsOutcome(dice.getRollArray());	//update the different bet objects (updates the payout and betAmount fields)
@@ -560,98 +727,8 @@ public class Game {
 		
 		
 	}	
-	
-    public static void main(String args[]) throws IOException {
-	
-		//Variable declarations
-		String str = ""; 
-		Game craps = new Game();
-		int betInput = 0;
-		int[] myBets = new int[6];
-		
-		//Get user input and save input into betInput
-		BufferedReader keyboard = 
-			new BufferedReader(new InputStreamReader(System.in)); 
-		
-		
-		System.out.println ("Starting Current balance = " + craps.playerBal);
-		System.out.println("Would you like to start? (y/n)");
-		str = keyboard.readLine();
-		if (str.equals("y")){
-			while (!str.equals("") && !str.equals("n"))
-			{
-				/** Point HAS NOT been set **/ 
-				if (craps.getPoint() == 0){
-					//Set Pass Line bet
-					myBets = craps.getBetInput(0);
-					craps.setPlayerBets(myBets, 0);
-					
-					//Set Dont Pass line bet
-					myBets = craps.getBetInput(1);
-					craps.setPlayerBets(myBets, 1);
-					
-				}			
-				/** Point HAS been set **/ 
-				else {
-					//Set the place bet 
-					myBets = craps.getBetInput(2);
-					craps.setPlayerBets(myBets, 2);
-					
-					//Set the come bet 
-					if (craps.comeBet.getState() == 0){
-						myBets = craps.getBetInput(6);
-						craps.setPlayerBets(myBets, 6);
-					}
-					//Set the don't come bet 
-					if (craps.dontComeBet.getState() == 0){
-						myBets = craps.getBetInput(3); 
-						craps.setPlayerBets(myBets, 3);
-					}
-					
-					
-					
-				}
-				
-				/** The following bets can be made at anytime, regardless of whether the point is set or not **/
-				
-				//Set the Hardway bet (bet can be made at anytime)
-				myBets = craps.getBetInput(4);
-				craps.setPlayerBets(myBets, 4);
-				
-				//Set the Proposition Bets (can be made at anytime)
-				myBets = craps.getBetInput(5);
-				craps.setPlayerBets(myBets, 5);
 
-				//Set the Field Bet (can be made at anytime)
-				myBets = craps.getBetInput(7);
-				craps.setPlayerBets(myBets, 7);
-				
-				
-				
-				/*********OUTPUT*************/
-				
-				System.out.println(); //Prints an empty line for readability purposes
-				System.out.println("********************** ROUND STARTS HERE ***************************");
-				System.out.println("Player's bet amounts before round:");
-				craps.printPlayerBets();
-				System.out.println("*********DEBUG***********");
-				System.out.println("state of don't come: " + craps.dontComeBet.getState());
-				System.out.println("state of come: " + craps.comeBet.getState());
-				System.out.println(); //Prints an empty line for readability purposes
-				System.out.println("Player Balance before roll " + craps.getPlayerBal()); 
-				System.out.println("********************** ROUND PLAYED ***************************");
-				craps.playRound();
-				System.out.println("Player Balance after roll " + craps.getPlayerBal());
-				System.out.println("Point: " + craps.getPoint()); 
-				System.out.println("Player's bet amounts after round:");
-				craps.printPlayerBets();
-				System.out.println("");
-				System.out.println("Do you want to roll again (any key to continue or enter/n to exit): ");
-				str=keyboard.readLine();
-				System.out.println(); //Prints an empty line for readability purposes
-			}
-		}
-    }
+  
 }			
 			
 
