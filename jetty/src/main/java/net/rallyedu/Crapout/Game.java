@@ -16,8 +16,6 @@ public class Game {
     private static int playerBal = 1000;        //current balance of the player
     private static Dice dice = new Dice();      //dice
     private static int point = 0;               //point
-	private static int dontComePoint = 0; //point set for Don't Come bets
-	private static int comePoint = 0; //Point set for come point bets
 	private static passLine passLineBet = new passLine(0); //pass line bet (betID = 0)
 	private static DontPassLine dontPassLineBet = new DontPassLine(0); //dont pass line bet (betID = 1)
 	private static placeBet placeBets = new placeBet(); //Place bets (betID = 2)
@@ -47,12 +45,14 @@ public class Game {
     public static int getPoint() {
         return point;
     }
-	public static int getDontComePoint(){
-		return dontComePoint;
-	}
-	public static int getComePoint(){
-		return comePoint;
-	}
+
+    public static int getComePoint(){
+        return comeBet.getComePoint();
+    }
+    public static int getDontComePoint(){
+        return dontComeBet.getDontComePoint();
+    }
+
 
     public static int getPlaceBet(int betID){
         	switch (betID){
@@ -152,12 +152,8 @@ public class Game {
     public static void setPoint(int newPoint) {
         point = newPoint;
     }
-	public static void setDontComePoint(int newPoint){
-		dontComePoint = newPoint;
-	}
-	public static void setComePoint(int newPoint){
-		comePoint = newPoint;
-	}
+
+
 
 	public static void setActiveBets(){
 		//Check for pass line bet 
@@ -229,6 +225,8 @@ public class Game {
 	public static void printPlayerBets() {
         //Print current point
         System.out.println("POINT: " + point);
+        //Print current come point
+        System.out.println("COME POINT: " + comeBet.getComePoint());
 		//Pass Line 
 		System.out.println("Current player's pass line bet amount: $" + passLineBet.getBetAmount());
 		//Dont Pass Line
@@ -279,10 +277,10 @@ public class Game {
 		passLineBet.checkBetOutcome(rollArray, button, point); 
 		dontPassLineBet.checkBetOutcome(rollArray, button, point);
 		placeBets.checkBetOutcome(rollArray, button, point);
-		dontComeBet.checkBetOutcome(rollArray, button, dontComePoint);
+		dontComeBet.checkBetOutcome(rollArray, button,point);
 		hardwayBet.checkBetOutcome(rollArray, button, point);
 		propBets.checkBetOutcome(rollArray, button, point);
-		comeBet.checkBetOutcome(rollArray, button, comePoint);
+		comeBet.checkBetOutcome(rollArray, button, point);
 		fieldBet.checkBetOutcome(rollArray, button, point);
 	}
 	
@@ -421,7 +419,8 @@ public class Game {
         }
         return msg;
     }
-	
+
+/* Not using anymore
 	//getBetInput: Used to read in bet input amounts from user, store them in an array, and return that array
 	public static int[] getBetInput(int betID) throws IOException{
 		//Declare and init string variables that store user input
@@ -630,12 +629,9 @@ public class Game {
 			str = keyboard.readLine();
 			betInput = Integer.parseInt(str); 
 			if (betInput > 0){
-				myBets[0] = betInput; 
-				comeBet.setState(1);	//activate the come bet 
+				myBets[0] = betInput;
 			}
-			else{
-				comeBet.setState(0);
-			}
+
 			return myBets; 
 		} else if (betID == 7) { //Field bet
 			//Populate field bet
@@ -649,7 +645,7 @@ public class Game {
 		
 		return myBets; //Default return statement
 	}
-	
+	    */
 
 	public static void playRound(){
 		
@@ -681,7 +677,35 @@ public class Game {
 		else if ((point != 0) && (diceArray[0]+diceArray[1] == point)){
 			point = 0;
 		}
-		
+
+
+        //Setting come point if comeBet is placed
+        if (point != 0 && (comeBet.getComePoint() == 0) && (comeBet.getBetAmount() > 0)){
+            //If dice roll is valid, set the come point
+            if (diceVal  != 2 && diceVal != 3 && diceVal != 7 && diceVal != 12 && diceVal !=11){
+                comeBet.setComePoint(diceVal);
+            }
+            //If dice roll is not valid, set come point to 0
+            else{
+                comeBet.setComePoint(0);
+            }
+        }
+
+        //Setting don't come point if dontComeBet is placed
+        if (point != 0 && (dontComeBet.getDontComePoint() == 0) && (dontComeBet.getBetAmount() > 0)){
+            //If dice roll is valid, set the come point
+            if (diceVal  != 2 && diceVal != 3 && diceVal != 7 && diceVal != 12 && diceVal !=11){
+                dontComeBet.setDontComePoint(diceVal);
+            }
+            //If dice roll is not valid, set come point to 0
+            else{
+                dontComeBet.setDontComePoint(0);
+            }
+        }
+
+
+        /*
+
 		//Setting the don't come point 
 		if ((dontComePoint == 0) && (dontComeBet.getState() == 1)){
 			if (diceVal  != 2 && diceVal != 3 && diceVal != 7 && diceVal != 12 && diceVal !=11){ 
@@ -723,10 +747,11 @@ public class Game {
 			System.out.println("Re-Setting come point: " + comePoint);
 			comeBet.setState(0);
 		}
+
+        */
 		
 		
-		
-	}	
+	}	    
 
   
 }			

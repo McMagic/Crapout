@@ -38,7 +38,19 @@
                 Point = <c:out value="${point}"/><br/>
             </c:if>
             <c:if test='${point == 0}'>
-                Point not set.
+                Point not set.<br/>
+            </c:if>
+            <c:if test='${comePoint != 0}'>
+                Come Point = <c:out value="${comePoint}"/><br/>
+            </c:if>
+            <c:if test='${comePoint == 0}'>
+                Come Point not set.<br/>
+            </c:if>
+            <c:if test='${dontComePoint != 0}'>
+                Don't Come Point = <c:out value="${dontComePoint}"/><br/>
+            </c:if>
+            <c:if test='${dontComePoint == 0}'>
+                Don't Come Point not set.<br/>
             </c:if>
             ------Current Bets------<br/>
 		    <c:out value="${passLineBet}"/><br/>

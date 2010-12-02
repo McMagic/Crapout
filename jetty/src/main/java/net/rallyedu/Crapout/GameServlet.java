@@ -17,9 +17,9 @@ public class GameServlet extends HttpServlet {
         req.setAttribute("crapStatus", Game.getCrapStatus());
 	
 	String errorMsg = "";
-	if (session.getValue("errorMsg") != null)
+	if (session.getAttribute("errorMsg") != null)
 	{
-		errorMsg = session.getValue("errorMsg").toString();
+		errorMsg = session.getAttribute("errorMsg").toString();
 	}
 	req.setAttribute("errorMsg", errorMsg);
 	
@@ -34,7 +34,7 @@ public class GameServlet extends HttpServlet {
 
         req.setAttribute("passLinePayout", Game.getBetPayoutString(0));
         req.setAttribute("dontPassLinePayout", Game.getBetPayoutString(1));
-        req.setAttribute("placePayout", Game.getBetPayoutString(2));
+        req.setAttribute("placePayout", Game.getBetPayoutString(2)); 
         req.setAttribute("dontComePayout", Game.getBetPayoutString(3));
         req.setAttribute("hardwayPayout", Game.getBetPayoutString(4));
         req.setAttribute("propPayout", Game.getBetPayoutString(5));
@@ -67,6 +67,8 @@ public class GameServlet extends HttpServlet {
         req.setAttribute("diceone", Game.getDiceVal(0));
         req.setAttribute("dicetwo", Game.getDiceVal(1));
         req.setAttribute("point", Game.getPoint());
+        req.setAttribute("comePoint", Game.getComePoint());
+        req.setAttribute("dontComePoint", Game.getDontComePoint());
         req.getRequestDispatcher("/WEB-INF/jsp/game.jsp").forward(req, resp);
     }
 }
