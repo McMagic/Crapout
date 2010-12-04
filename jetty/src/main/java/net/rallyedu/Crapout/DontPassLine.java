@@ -49,7 +49,6 @@ public class DontPassLine extends Bet {
 					setBetAmount(amt);
 				}
 				else if (rollSum != 7 && rollSum != point){
-					System.out.println("Am i in last else statement");
 					setPayOut(0);
 				}
 			}
@@ -63,7 +62,8 @@ public class DontPassLine extends Bet {
 				
 				else if (rollSum == 2 || rollSum == 3 ||  rollSum == 12){
 				//2, 3, or 12 is rolled on come-out roll, player WINS 
-					setPayOut(getBetAmount()); 
+					setPayOut(2*getBetAmount());
+                    setBetAmount(amt);
 				}
 			}
 		}

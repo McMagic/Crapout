@@ -29,13 +29,15 @@ public class PassLineTest {
        passLineBet.setBetAmount(betAmt);
        passLineBet.checkBetOutcome(diceVal,true, 0);
        Assert.assertEquals(passLineBet.getPayOut(), 200);
+       Assert.assertEquals(passLineBet.getBetAmount(), 0);
 
        diceVal[0] = 7;
        diceVal[1] = 4;
        point = 0;
        passLineBet.setBetAmount(betAmt);
-       passLineBet.checkBetOutcome(diceVal,true, 0);
+       passLineBet.checkBetOutcome(diceVal,true, point);
        Assert.assertEquals(passLineBet.getPayOut(), 200);
+       Assert.assertEquals(passLineBet.getBetAmount(), 0);
 
        //Test Case:
        //Pass line bet
@@ -46,24 +48,111 @@ public class PassLineTest {
        diceVal[1] = 1;
        point = 0;
        passLineBet.setBetAmount(betAmt);
-       passLineBet.checkBetOutcome(diceVal,true, 0);
+       passLineBet.checkBetOutcome(diceVal,true, point);
        Assert.assertEquals(passLineBet.getPayOut(), 0);
+       Assert.assertEquals(passLineBet.getBetAmount(), 0);
+
 
        diceVal[0] = 1;
        diceVal[1] = 2;
        point = 0;
        passLineBet.setBetAmount(betAmt);
-       passLineBet.checkBetOutcome(diceVal,true, 0);
+       passLineBet.checkBetOutcome(diceVal,true, point);
        Assert.assertEquals(passLineBet.getPayOut(), 0);
+       Assert.assertEquals(passLineBet.getBetAmount(), 0);
 
        diceVal[0] = 6;
        diceVal[1] = 6;
        point = 0;
        passLineBet.setBetAmount(betAmt);
-       passLineBet.checkBetOutcome(diceVal,true, 0);
+       passLineBet.checkBetOutcome(diceVal,true, point);
        Assert.assertEquals(passLineBet.getPayOut(), 0);
+       Assert.assertEquals(passLineBet.getBetAmount(), 0);
 
-        
+        //Point is not set
+        //Dice = 4,5, 6,8,9,10
+        //Player doesn't win or lose (payout should be 0, bet amount should remain)
+       diceVal[0] = 3;
+       diceVal[1] = 1;
+       point = 0;
+       passLineBet.setBetAmount(betAmt);
+       passLineBet.checkBetOutcome(diceVal,true, point);
+       Assert.assertEquals(passLineBet.getPayOut(), 0);
+       Assert.assertEquals(passLineBet.getBetAmount(), 100);
 
+       diceVal[0] = 4;
+       diceVal[1] = 1;
+       point = 0;
+       passLineBet.setBetAmount(betAmt);
+       passLineBet.checkBetOutcome(diceVal,true, point);
+       Assert.assertEquals(passLineBet.getPayOut(), 0);
+       Assert.assertEquals(passLineBet.getBetAmount(), 100);
+
+       diceVal[0] = 2;
+       diceVal[1] = 4;
+       point = 0;
+       passLineBet.setBetAmount(betAmt);
+       passLineBet.checkBetOutcome(diceVal,true, point);
+       Assert.assertEquals(passLineBet.getPayOut(), 0);
+       Assert.assertEquals(passLineBet.getBetAmount(), 100);
+
+       diceVal[0] = 5;
+       diceVal[1] = 3;
+       point = 0;
+       passLineBet.setBetAmount(betAmt);
+       passLineBet.checkBetOutcome(diceVal,true, point);
+       Assert.assertEquals(passLineBet.getPayOut(), 0);
+       Assert.assertEquals(passLineBet.getBetAmount(), 100);
+
+       diceVal[0] = 6;
+       diceVal[1] = 3;
+       point = 0;
+       passLineBet.setBetAmount(betAmt);
+       passLineBet.checkBetOutcome(diceVal,true, point);
+       Assert.assertEquals(passLineBet.getPayOut(), 0);
+       Assert.assertEquals(passLineBet.getBetAmount(), 100);
+
+       diceVal[0] = 6;
+       diceVal[1] = 4;
+       point = 0;
+       passLineBet.setBetAmount(betAmt);
+       passLineBet.checkBetOutcome(diceVal,true, point);
+       Assert.assertEquals(passLineBet.getPayOut(), 0);
+       Assert.assertEquals(passLineBet.getBetAmount(), 100);
+
+
+       //Point is set to 4
+       //Dice = point
+       //Player should win
+       diceVal[0] = 2;
+       diceVal[1] = 2;
+       point = 4;
+       passLineBet.setBetAmount(betAmt);
+       passLineBet.checkBetOutcome(diceVal,true, point);
+       Assert.assertEquals(passLineBet.getPayOut(), 200);
+       Assert.assertEquals(passLineBet.getBetAmount(), 0);
+
+       //Point is set to 4
+       //Dice != point and 7
+       //No payout, bet amount should remain the same
+       diceVal[0] = 2;
+       diceVal[1] = 4;
+       point = 4;
+       passLineBet.setBetAmount(betAmt);
+       passLineBet.checkBetOutcome(diceVal,true, point);
+       Assert.assertEquals(passLineBet.getPayOut(), 0);
+       Assert.assertEquals(passLineBet.getBetAmount(), 100);
+
+       //Point is set to 4
+       //Dice = 7
+       //Player loses
+       //No payout, bet amount should be 0
+       diceVal[0] = 3;
+       diceVal[1] = 4;
+       point = 4;
+       passLineBet.setBetAmount(betAmt);
+       passLineBet.checkBetOutcome(diceVal,true, point);
+       Assert.assertEquals(passLineBet.getPayOut(), 0);
+       Assert.assertEquals(passLineBet.getBetAmount(), 0);
     }
 }
