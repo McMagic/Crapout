@@ -23,6 +23,37 @@ public class FieldTest {
     }
     public void testGetReply(){
         Assert.assertEquals(ftng.getPayOut(),10);
-    }
+   	
+	Assert.assertEquals(ftng.getPayOut(),10);
+        ftng = new Field(5);
+        droll[0] = 1;
+        droll[1] = 1;
+        ftng.checkBetOutcome(droll,true,9);
+        Assert.assertEquals(ftng.getPayOut(),15);
+
+        ftng = new Field(5);
+        droll[0] = 6;
+        droll[1] = 6;
+        ftng.checkBetOutcome(droll,true,9);
+        Assert.assertEquals(ftng.getPayOut(),15);
+
+        ftng = new Field(5);
+        droll[0] = 4;
+        droll[1] = 2;
+        ftng.checkBetOutcome(droll,true,9);
+        Assert.assertEquals(ftng.getPayOut(),0);
+
+        ftng = new Field(5);
+        droll[0] = 2;
+        droll[1] = 9;
+        ftng.checkBetOutcome(droll,true,9);
+        Assert.assertEquals(ftng.getPayOut(),10);
+
+        ftng = new Field(5);
+        droll[0] = 3;
+        droll[1] = 4;
+        ftng.checkBetOutcome(droll,true,9);
+        Assert.assertEquals(ftng.getPayOut(),0);
+	 }
 
 }
