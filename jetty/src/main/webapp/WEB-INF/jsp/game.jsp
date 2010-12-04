@@ -3,7 +3,6 @@
 
 <layout:default>
 	<jsp:attribute name="content">
-		<a name="gameref">
 		<img id="table" height="80%" width="80%" src="http://jonghost.iyikes.com/craps/table.php?
 			p=<c:out value="${point}"/>
 			&pl=<c:out value="${passline}"/>
@@ -28,7 +27,6 @@
 			&h8=<c:out value="${hardwayeight}"/>
 			&h10=<c:out value="${hardwayten}"/>
 		"/>
-		</a>
 
         <img id="diceone" height="70" width="70" src="<c:url value="/images/dice"/><c:out value="${diceone}"/>.png"/>
         <img id="dicetwo" height="70" width="70" src="<c:url value="/images/dice"/><c:out value="${dicetwo}"/>.png"/>
@@ -77,7 +75,6 @@
         <div id="betform">
 		<c:out value="${errorMsg}"/><br/>
 		<form action="<c:url value="/roll"/>" method="post">
-			<input type="submit" value="Roll"/><br/>
 			<div id="betname">Passline Bet:</div>
 			<input id="betamt" type="text" name="passlineBet"/><br/>
 			<div id="betname">Don't Passline Bet:</div>
@@ -120,6 +117,7 @@
 			<input id="betamt" type="text" name="propTwelveBet"/><br/>
 			<div id="betname">Field Bet:</div>
 			<input id="betamt" type="text" name="fieldBet"/><br/>
+			<input type="submit" value="Roll"/><br/>
 		</form>
         </div>
 

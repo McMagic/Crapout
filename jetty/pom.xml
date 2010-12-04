@@ -9,6 +9,12 @@
   <url>http://maven.apache.org</url>
   <dependencies>
 	<dependency>
+	   <groupId>org.testng</groupId>
+	   <artifactId>testng</artifactId>
+	   <version>5.14</version>
+	   <scope>test</scope>
+	</dependency>
+	<dependency>
 	   <groupId>javax.servlet</groupId>
 	   <artifactId>servlet-api</artifactId>
 	   <version>2.5</version>
@@ -19,12 +25,6 @@
 	   <artifactId>standard</artifactId>
 	   <version>1.1.2</version>
 	   <scope>provided</scope>
-	</dependency>
-    <dependency>
-	   <groupId>org.testng</groupId>
-	   <artifactId>testng</artifactId>
-	   <version>5.14</version>
-	   <scope>test</scope>
 	</dependency>
   </dependencies>
   <build>
