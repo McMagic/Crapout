@@ -8,9 +8,9 @@
 
 package net.rallyedu.Crapout;
 
-public class passLine extends Bet {
+public class PassLine extends Bet {
 
-    public passLine(int amount) {
+    public PassLine(int amount) {
         this.betAmount = amount;
         this.payOut = 0;
         this.active = true;

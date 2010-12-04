@@ -26,7 +26,7 @@ public abstract class Bet {
 	
 	
 	//NOTE: This function now takes an array as opposed to a value
-	//This is because is its overwritten in the placeBet class
+	//This is because is its overwritten in the PlaceBet class
 	public void setBetAmount(int[] bet){
 		betAmount = bet[0];
 	}

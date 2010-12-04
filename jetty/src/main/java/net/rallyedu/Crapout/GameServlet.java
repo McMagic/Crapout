@@ -25,7 +25,7 @@ public class GameServlet extends HttpServlet {
 	
         req.setAttribute("passLineBet", Game.getBetAmtString(0));
         req.setAttribute("dontPassLineBet", Game.getBetAmtString(1));
-        req.setAttribute("placeBet", Game.getBetAmtString(2));
+        req.setAttribute("PlaceBet", Game.getBetAmtString(2));
         req.setAttribute("dontComeBet", Game.getBetAmtString(3));
         req.setAttribute("hardwayBet", Game.getBetAmtString(4));
         req.setAttribute("propBet", Game.getBetAmtString(5));
@@ -46,7 +46,7 @@ public class GameServlet extends HttpServlet {
         req.setAttribute("dontpass", Game.getBet(1));
         req.setAttribute("dontcome", Game.getBet(3));
         req.setAttribute("come", Game.getBet(6));
-        req.setAttribute("field", Game.getBet(7));
+        req.setAttribute("Field", Game.getBet(7));
         req.setAttribute("placefour", Game.getPlaceBet(0));
         req.setAttribute("placefive", Game.getPlaceBet(1));
         req.setAttribute("placesix", Game.getPlaceBet(2));

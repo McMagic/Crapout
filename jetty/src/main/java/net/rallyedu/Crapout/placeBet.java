@@ -8,7 +8,7 @@
 
 package net.rallyedu.Crapout;
 
-public class placeBet extends Bet {
+public class PlaceBet extends Bet {
 	
 	//These variables keep track of the amount of money placed on a particular bet number
     protected int moneyOnFour;
@@ -19,7 +19,7 @@ public class placeBet extends Bet {
     protected int moneyOnTen;
 
 	//Constructor to set instance variables 
-	public placeBet() {
+	public PlaceBet() {
 		this.moneyOnFour = 0;
 		this.moneyOnFive = 0;
    		this.moneyOnSix = 0;

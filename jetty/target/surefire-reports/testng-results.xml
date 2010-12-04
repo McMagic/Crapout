@@ -1,0 +1,14 @@
+<testng-results>
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="24" started-at="2010-12-04T12:36:23Z" finished-at="2010-12-04T12:36:23Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="24" started-at="2010-12-04T12:36:23Z" finished-at="2010-12-04T12:36:23Z">
+      <class name="net.rallyedu.Crapout.PassLineTest">
+        <test-method status="PASS" signature="test()" name="test" duration-ms="8" started-at="2010-12-04T12:36:23Z" finished-at="2010-12-04T12:36:23Z">
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>

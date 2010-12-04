@@ -43,7 +43,7 @@
 		   <artifactId>maven-jetty-plugin</artifactId>
 		   <configuration>
 		       <contextPath>/</contextPath>
-		   </configuration>
+		   </configuration>                                     
 		</plugin>
 	</plugins>
   </build>

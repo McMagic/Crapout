@@ -7,23 +7,20 @@
  */
 
 package net.rallyedu.Crapout;
- 
-import java.io.*; 
-import java.util.*; 
- 
+
 public class Game {
     private static boolean button = true;       //indicator of whether or not a point is set
     private static int playerBal = 1000;        //current balance of the player
     private static Dice dice = new Dice();      //dice
     private static int point = 0;               //point
-	private static passLine passLineBet = new passLine(0); //pass line bet (betID = 0)
+	private static PassLine passLineBet = new PassLine(0); //pass line bet (betID = 0)
 	private static DontPassLine dontPassLineBet = new DontPassLine(0); //dont pass line bet (betID = 1)
-	private static placeBet placeBets = new placeBet(); //Place bets (betID = 2)
+	private static PlaceBet placeBets = new PlaceBet(); //Place bets (betID = 2)
 	private static DontCome dontComeBet = new DontCome(0); //Dont come bet (betID = 3)
 	private static Hardway hardwayBet = new Hardway(); //Hardway bet (betID = 4)
 	private static Proposition propBets = new Proposition(); //Proposition (betID = 5)
 	private static Come comeBet = new Come(0); //Come bet (betID = 6)
-	private static field fieldBet = new field(0); //Field (betID = 7)
+	private static Field fieldBet = new Field(0); //Field (betID = 7)
 
 
 	//Default constructor
@@ -268,7 +265,7 @@ public class Game {
 		System.out.println("----Money on Yo Eleven: $" + propBets.getYoElevenMoney() );
 
 		//Field Bet
-	 	System.out.println("Current player's field bet amount: $" + fieldBet.getBetAmount());
+	 	System.out.println("Current player's Field bet amount: $" + fieldBet.getBetAmount());
 
 
 	}
@@ -290,7 +287,7 @@ public class Game {
 		System.out.println("");
 		//Update with payout from pass line bet 
 		payout += passLineBet.getPayOut(); 
-		System.out.println("Payout from passLine: " + passLineBet.getPayOut());
+		System.out.println("Payout from PassLine: " + passLineBet.getPayOut());
 
 		
 		//Update with payout from don't pass line bet 
@@ -319,7 +316,7 @@ public class Game {
 			
 		//Update with payout from fieldBet
 		payout += fieldBet.getPayOut(); 
-		System.out.println("Payout from field bet: " + fieldBet.getPayOut());
+		System.out.println("Payout from Field bet: " + fieldBet.getPayOut());
 		
 		//Increment payout for all other bets.... 
 		playerBal += payout; 
@@ -634,7 +631,7 @@ public class Game {
 
 			return myBets; 
 		} else if (betID == 7) { //Field bet
-			//Populate field bet
+			//Populate Field bet
 			System.out.println("Please enter the amount for the Field Bet: ");
 			str = keyboard.readLine(); 
 			betInput = Integer.parseInt(str);

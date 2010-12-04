@@ -8,9 +8,9 @@
 
 package net.rallyedu.Crapout;
 
-public class field extends Bet {
+public class Field extends Bet {
 
-    public field(int amount) {
+    public Field(int amount) {
         this.betAmount = amount;
         this.payOut = 0;
         this.active = true;
