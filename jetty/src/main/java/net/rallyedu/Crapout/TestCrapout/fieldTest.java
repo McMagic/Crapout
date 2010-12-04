@@ -1,5 +1,12 @@
-
 import net.rallyedu.Crapout.field;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: zachmanc
+ * Date: Dec 4, 2010
+ * Time: 11:59:35 AM
+ * To change this template use File | Settings | File Templates.
+ */
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -26,3 +33,4 @@ public class fieldTest {
     }
 
 }
+
