@@ -542,7 +542,7 @@ public class RollServlet extends HttpServlet {
 
 
         // Redirect to the game page
-        resp.sendRedirect("game");
+        resp.sendRedirect("game#gameref");
     }
 }
 
