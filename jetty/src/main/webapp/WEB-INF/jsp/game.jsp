@@ -3,7 +3,7 @@
 
 <layout:default>
 	<jsp:attribute name="content">
-		<img id="table" height="80%" width="80%" src="http://jonghost.iyikes.com/craps/table.php?
+		<img id="table" src="http://jonghost.iyikes.com/craps/table.php?
 			p=<c:out value="${point}"/>
 			&pl=<c:out value="${passline}"/>
 			&dp=<c:out value="${dontpass}"/>
@@ -27,9 +27,10 @@
 			&h8=<c:out value="${hardwayeight}"/>
 			&h10=<c:out value="${hardwayten}"/>
 		"/>
-
-        <img id="diceone" height="70" width="70" src="<c:url value="/images/dice"/><c:out value="${diceone}"/>.png"/>
-        <img id="dicetwo" height="70" width="70" src="<c:url value="/images/dice"/><c:out value="${dicetwo}"/>.png"/>
+	<c:if test='${diceone != 0 && dicetwo != 0}'>
+        <img id="diceone" height="80" width="80" src="<c:url value="/images/dice"/><c:out value="${diceone}"/>.png"/>
+        <img id="dicetwo" height="80" width="80" src="<c:url value="/images/dice"/><c:out value="${dicetwo}"/>.png"/>
+	</c:if>
 
         <div id="status">
             <c:out value="${crapStatus}"/><br/>

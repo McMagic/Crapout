@@ -10,7 +10,7 @@ body {
 .container a {  color: #249eca; text-decoration: none;  }
 .container a:hover {  text-decoration: underline;  }
 .container #header {  display:block; margin-left: auto; margin-right: auto; padding: 10px; border: 0;  }
-.container #table {  display:inline; float: left; margin-right: auto; padding: 10px; border: 0;  }
+.container #table {  display:inline; float: left; margin-right: auto; padding: 10px; border: 0; height: 488px; width: 798px;  }
 .container #menu {  border: 1px solid #249eca; width: 1024px; height: 30px; float: left; display: inline; line-height: 28px; font-size: 20px;  }
 .container #menu a:link, .wtonfb #menu a:visited {  text-decoration: none;  }
 .container #menu a:hover {  text-decoration: underline;  }
@@ -18,14 +18,10 @@ body {
 .container #nav_link a:link, .container #nav_link a:visited {  width: 200px; font-weight: bold;  }
 .container #diceone { display:inline; float: right; margin-left: auto; padding: 10px; border: 0;  }
 .container #dicetwo { display:inline; float: right; margin-left: auto; padding: 10px; border: 0;  }
-.container #status {display: inline; width: 160px; float: right; margin-left:auto; padding: 10px; border: 0; }
+.container #status {display: inline; width: 180px; float: right; margin-left:auto; padding: 10px; border: 0; }
 .container #betform {display: block; float: left; margin-left:auto; padding: 10px; border: 0; }
 .container #betname { width: 200px; display: inline; float: left; margin-right:auto; }
 .container #betamt {display: inline; float: left; margin-left:auto; }
-
-#content {
-    overflow: auto;
-}
 
 #tweet_form {
     margin-bottom: 20px;
