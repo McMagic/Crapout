@@ -1,6 +1,6 @@
 package net.rallyedu.Crapout;
 
-import org.testng.Assert;
+import junit.framework.Assert;
 import org.testng.annotations.Test;
 
 /**

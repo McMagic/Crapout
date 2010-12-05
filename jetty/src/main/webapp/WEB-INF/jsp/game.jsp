@@ -27,9 +27,27 @@
 			&h8=<c:out value="${hardwayeight}"/>
 			&h10=<c:out value="${hardwayten}"/>
 		"/>
+
+
+
+        <div class="user">
+		<div id="pic">
+			<c:set var="twitterURL" value="http://www.twitter.com/${User.screenName}"/>
+		        <a href="<c:out value="${twitterURL}"/>"><img src="<c:out value="${User.profileImageURL}"/>" height="48" width="48" alt="<c:out value="${User.screenName}"/>"/></a>
+		</div>
+		<div id="name">
+			<b>${User.screenName}</b>
+		</div>
+		<div id="signout">
+			<form action="<c:url value="/signout"/>" method="get">
+				<input type="submit" value="Sign-Out"/><br/>
+			</form>
+		</div>
+        </div>
+
 	<c:if test='${diceone != 0 && dicetwo != 0}'>
-        <img id="diceone" height="80" width="80" src="<c:url value="/images/dice"/><c:out value="${diceone}"/>.png"/>
-        <img id="dicetwo" height="80" width="80" src="<c:url value="/images/dice"/><c:out value="${dicetwo}"/>.png"/>
+        <img id="diceone" src="<c:url value="/images/dice"/><c:out value="${diceone}"/>.png"/>
+        <img id="dicetwo" src="<c:url value="/images/dice"/><c:out value="${dicetwo}"/>.png"/>
 	</c:if>
 
         <div id="status">
