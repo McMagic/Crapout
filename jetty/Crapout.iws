@@ -104,17 +104,15 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/FieldTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="1" column="0" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DontPassLineTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DontPassLineTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/DontPassLineTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="21" selection-start="119" selection-end="119" vertical-scroll-proportion="-3.3636363">
+            <state line="6" column="21" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,11 +120,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HardwayTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="HardwayTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/HardwayTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="18" selection-start="0" selection-end="30" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="33" column="18" selection-start="822" selection-end="822" vertical-scroll-proportion="0.65284973">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -165,9 +165,9 @@
         <option value="$PROJECT_DIR$/test/PassLineTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/PassLineTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/HardwayTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/FieldTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/DontPassLineTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/HardwayTest.java" />
       </list>
     </option>
   </component>
@@ -208,6 +208,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Favorites" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -299,8 +301,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -317,16 +317,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.DontPassLineTest">
+  <component name="RunManager" selected="TestNG.HardwayTest">
     <configuration default="false" name="ComeTest" type="TestNG" factoryName="TestNG" temporary="true">
       <extension name="coverage" enabled="false" merge="false">
         <pattern>
@@ -712,15 +712,15 @@
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32996634" sideWeight="0.66057837" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32996634" sideWeight="0.66210043" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32724506" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -837,24 +837,23 @@
         <state line="491" column="40" selection-start="15204" selection-end="15204" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/rallyedu/Crapout/GameServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="54" selection-start="3390" selection-end="3390" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/rallyedu/Crapout/Bet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="24" selection-start="664" selection-end="664" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/rallyedu/Crapout/Hardway.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/DontPassLineTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0" />
+        <state line="6" column="21" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/HardwayTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/rallyedu/Crapout/Hardway.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="18" selection-start="0" selection-end="30" vertical-scroll-proportion="0.0">
+        <state line="10" column="13" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -862,15 +861,18 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/FieldTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/DontPassLineTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/rallyedu/Crapout/GameServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="21" selection-start="119" selection-end="119" vertical-scroll-proportion="-3.3636363">
+        <state line="70" column="54" selection-start="3390" selection-end="3390" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/HardwayTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="18" selection-start="822" selection-end="822" vertical-scroll-proportion="0.65284973">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
