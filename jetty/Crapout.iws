@@ -100,10 +100,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FieldTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FieldTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/FieldTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="30" selection-end="30" vertical-scroll-proportion="0.031168832">
+            <state line="1" column="0" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DontPassLineTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/DontPassLineTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="21" selection-start="119" selection-end="119" vertical-scroll-proportion="-3.3636363">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -156,6 +167,7 @@
         <option value="$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/PassLineTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/HardwayTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/FieldTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/DontPassLineTest.java" />
       </list>
     </option>
   </component>
@@ -314,43 +326,7 @@
       <recent name="$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.FieldTest">
-    <configuration default="false" name="DontComeTest" type="TestNG" factoryName="TestNG" temporary="true">
-      <extension name="coverage" enabled="false" merge="false">
-        <pattern>
-          <option name="PATTERN" value="net.rallyedu.Crapout.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <extension name="snapshooter" />
-      <module name="Crapout" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="net.rallyedu.Crapout" />
-      <option name="MAIN_CLASS_NAME" value="net.rallyedu.Crapout.DontComeTest" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="TestNG.DontPassLineTest">
     <configuration default="false" name="ComeTest" type="TestNG" factoryName="TestNG" temporary="true">
       <extension name="coverage" enabled="false" merge="false">
         <pattern>
@@ -473,6 +449,42 @@
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="net.rallyedu.Crapout" />
       <option name="MAIN_CLASS_NAME" value="net.rallyedu.Crapout.FieldTest" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="DontPassLineTest" type="TestNG" factoryName="TestNG" temporary="true">
+      <extension name="coverage" enabled="false" merge="false">
+        <pattern>
+          <option name="PATTERN" value="net.rallyedu.Crapout.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <extension name="snapshooter" />
+      <module name="Crapout" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="net.rallyedu.Crapout" />
+      <option name="MAIN_CLASS_NAME" value="net.rallyedu.Crapout.DontPassLineTest" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
@@ -641,11 +653,11 @@
       </method>
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="TestNG.DontComeTest" />
-      <item index="1" class="java.lang.String" itemvalue="TestNG.ComeTest" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.HardwayTest" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.PassLineTest" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.FieldTest" />
+      <item index="0" class="java.lang.String" itemvalue="TestNG.ComeTest" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.HardwayTest" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.PassLineTest" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.FieldTest" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.DontPassLineTest" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -820,11 +832,6 @@
         <state line="62" column="34" selection-start="1858" selection-end="1858" vertical-scroll-proportion="0.25611746" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/DontPassLineTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="280" selection-end="280" vertical-scroll-proportion="0.37402597" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/rallyedu/Crapout/RollServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="491" column="40" selection-start="15204" selection-end="15204" vertical-scroll-proportion="0.0" />
@@ -854,7 +861,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/FieldTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="30" selection-end="30" vertical-scroll-proportion="0.031168832">
+        <state line="1" column="0" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/DontPassLineTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="21" selection-start="119" selection-end="119" vertical-scroll-proportion="-3.3636363">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
