@@ -38,7 +38,7 @@ public class GameServlet extends HttpServlet {
 		// Check if there is already this user
 		stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 		rs = stmt.executeQuery("SELECT * FROM users WHERE id=" + session.getAttribute("userid"));
-		if (rs == null)
+		if (!rs.next())
 		{
 			stmt.executeUpdate("INSERT INTO users(id, playerBal) VALUES (" + session.getAttribute("userid") + ", " + req.getAttribute("playerbal") + ")");
 		}
