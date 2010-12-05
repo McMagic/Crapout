@@ -1,12 +1,12 @@
 <testng-results>
   <reporter-output>
   </reporter-output>
-  <suite name="Command line suite" duration-ms="17" started-at="2010-12-04T17:38:59Z" finished-at="2010-12-04T17:38:59Z">
+  <suite name="Command line suite" duration-ms="15" started-at="2010-12-04T17:47:54Z" finished-at="2010-12-04T17:47:54Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="17" started-at="2010-12-04T17:38:59Z" finished-at="2010-12-04T17:38:59Z">
-      <class name="net.rallyedu.Crapout.ComeTest">
-        <test-method status="PASS" signature="test()" name="test" duration-ms="7" started-at="2010-12-04T17:38:59Z" finished-at="2010-12-04T17:38:59Z">
+    <test name="Command line test" duration-ms="15" started-at="2010-12-04T17:47:54Z" finished-at="2010-12-04T17:47:54Z">
+      <class name="net.rallyedu.Crapout.DontPassLineTest">
+        <test-method status="PASS" signature="test()" name="test" duration-ms="5" started-at="2010-12-04T17:47:54Z" finished-at="2010-12-04T17:47:54Z">
         </test-method>
       </class>
     </test>

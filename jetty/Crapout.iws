@@ -103,7 +103,7 @@
       <file leaf-file-name="FieldTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/FieldTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="43" selection-start="530" selection-end="530" vertical-scroll-proportion="0.34285715">
+            <state line="1" column="0" selection-start="30" selection-end="30" vertical-scroll-proportion="0.031168832">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,10 +114,8 @@
       <file leaf-file-name="HardwayTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/HardwayTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="30" selection-start="681" selection-end="681" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="0" column="18" selection-start="0" selection-end="30" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -198,7 +196,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Favorites" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -289,8 +287,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -307,9 +305,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -462,14 +460,19 @@
       <method />
     </configuration>
     <configuration default="false" name="FieldTest" type="TestNG" factoryName="TestNG" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" />
+      <extension name="coverage" enabled="false" merge="false">
+        <pattern>
+          <option name="PATTERN" value="net.rallyedu.Crapout.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <extension name="snapshooter" />
       <module name="Crapout" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="net.rallyedu.Crapout" />
-      <option name="MAIN_CLASS_NAME" value="FieldTest" />
+      <option name="MAIN_CLASS_NAME" value="net.rallyedu.Crapout.FieldTest" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
@@ -692,7 +695,6 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3979442" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -709,6 +711,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -819,9 +822,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/DontPassLineTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="280" selection-end="280" vertical-scroll-proportion="0.37402597">
-          <folding />
-        </state>
+        <state line="13" column="13" selection-start="280" selection-end="280" vertical-scroll-proportion="0.37402597" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/rallyedu/Crapout/RollServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="491" column="40" selection-start="15204" selection-end="15204" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/rallyedu/Crapout/GameServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="54" selection-start="3390" selection-end="3390" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/rallyedu/Crapout/Bet.java">
@@ -831,33 +842,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/rallyedu/Crapout/Hardway.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/rallyedu/Crapout/GameServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="54" selection-start="3390" selection-end="3390" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/rallyedu/Crapout/RollServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="491" column="40" selection-start="15204" selection-end="15204" vertical-scroll-proportion="0.0" />
+        <state line="10" column="13" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/HardwayTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="30" selection-start="681" selection-end="681" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="0" column="18" selection-start="0" selection-end="30" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/net/rallyedu/Crapout/FieldTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="43" selection-start="530" selection-end="530" vertical-scroll-proportion="0.34285715">
+        <state line="1" column="0" selection-start="30" selection-end="30" vertical-scroll-proportion="0.031168832">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

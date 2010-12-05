@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.484" errors="0" skipped="0" tests="1" name="TestSuite">
+<testsuite failures="0" time="0.492" errors="0" skipped="0" tests="1" name="TestSuite">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -22,7 +22,7 @@
     <property name="basedir" value="/Users/zachmanc/Documents/Classes/Fall 2010/CSCI 3308/Project/Crapout/jetty"/>
     <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
     <property name="os.arch" value="x86_64"/>
-    <property name="surefire.real.class.path" value="/var/folders/9d/9dnZ+x+IH0qqyBYuMiTpo++++TI/-Tmp-/surefirebooter3846426133115382619.jar"/>
+    <property name="surefire.real.class.path" value="/var/folders/9d/9dnZ+x+IH0qqyBYuMiTpo++++TI/-Tmp-/surefirebooter9192933491895128396.jar"/>
     <property name="java.io.tmpdir" value="/var/folders/9d/9dnZ+x+IH0qqyBYuMiTpo++++TI/-Tmp-/"/>
     <property name="line.separator" value="
 "/>
@@ -64,5 +64,5 @@
     <property name="ftp.nonProxyHosts" value="lockproxy.info|*.lockproxy.info"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.007" classname="net.rallyedu.Crapout.ComeTest" name="test"/>
+  <testcase time="0.006" classname="net.rallyedu.Crapout.DontPassLineTest" name="test"/>
 </testsuite>
