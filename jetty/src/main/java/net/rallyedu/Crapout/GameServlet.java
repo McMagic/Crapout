@@ -6,15 +6,62 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.*;
 
 public class GameServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	HttpSession session = req.getSession(true);
 	
+	session.setAttribute("userid", 1);
 	req.setAttribute("playerbal", Game.getPlayerBal());
-
         req.setAttribute("crapStatus", Game.getCrapStatus());
+	
+	// MySQL
+	try {
+		Statement stmt;
+		ResultSet rs;
+		
+		// Define driver for JDBC
+		Class.forName("com.mysql.jdbc.Driver");
+		
+		// Database name is Crapout
+		String url = "jdbc:mysql://localhost/Crapout";
+		
+		// Using root account for now
+		String username = "root";
+		String password = "CrapOut!";
+		Connection con = DriverManager.getConnection(url, username, password);
+		
+		stmt = con.createStatement();
+		
+		// Check if there is already this user
+		stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+		rs = stmt.executeQuery("SELECT * FROM users WHERE id=" + session.getAttribute("userid"));
+		if (rs == null)
+		{
+			stmt.executeUpdate("INSERT INTO users(id, playerBal) VALUES (" + session.getAttribute("userid") + ", " + req.getAttribute("playerbal") + ")");
+		}
+		else
+		{
+			stmt.executeUpdate("UPDATE users SET playerbal=" + req.getAttribute("playerbal") + " WHERE id=" + session.getAttribute("userid"));
+		}
+		
+		stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+		rs = stmt.executeQuery("SELECT * FROM users ORDER BY id");
+
+		System.out.println("Display all results:");
+		while(rs.next())
+		{
+			int userid = rs.getInt("id");
+			int myBalance = rs.getInt("playerBal");
+			System.out.println("\tid= " + userid + "\tBalance = " + myBalance);
+		}
+		
+		con.close();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
 	
 	String errorMsg = "";
 	if (session.getAttribute("errorMsg") != null)
