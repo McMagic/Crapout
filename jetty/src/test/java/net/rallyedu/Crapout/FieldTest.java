@@ -16,15 +16,14 @@ public class FieldTest {
     public Field ftng = new Field(5);
     public FieldTest(){
         droll = new int[2];
+    }
+    public void testGetReply(){
+
         droll[0] =1;
         droll[1]= 2;
         ftng.checkBetOutcome(droll,true,5);
+	    Assert.assertEquals(ftng.getPayOut(),10);
 
-    }
-    public void testGetReply(){
-        Assert.assertEquals(ftng.getPayOut(),10);
-   	
-	Assert.assertEquals(ftng.getPayOut(),10);
         ftng = new Field(5);
         droll[0] = 1;
         droll[1] = 1;
