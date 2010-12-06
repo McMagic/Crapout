@@ -48,32 +48,33 @@ public class GameServlet extends HttpServlet {
                 ResultSet rs;
 
                 // Define driver for JDBC
-                Class.forName("com.mysql.jdbc.Driver");
+                Class.forName("org.sqlite.JDBC");
 
                 // Database name is Crapout
-                String url = "jdbc:mysql://localhost/Crapout";
+                String url = "jdbc:sqlite:crapout.db";
 
                 // Using root account for now
-                String username = "root";
-                String password = "CrapOut!";
-                Connection con = DriverManager.getConnection(url, username, password);
-
+                Connection con = DriverManager.getConnection(url);
+		
                 stmt = con.createStatement();
+		stmt.setQueryTimeout(30);
+		stmt.executeUpdate("create table if not exists users (id integer, playerBal integer)");
+		System.out.println("Create table was fine\n");
 
                 // Check if there is already this user
-                stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-		rs = stmt.executeQuery("SELECT * FROM users WHERE id=" + session.getAttribute("userid"));
+		rs = stmt.executeQuery("select * from users where id=" + session.getAttribute("userid"));
+		System.out.println("Select users was fine\n");
                 if ((!rs.next()) && (newGame == true))
                 {
 			if (newGame == true)
 			{
 				req.setAttribute("playerbal", Game.getPlayerBal());
-	                        stmt.executeUpdate("INSERT INTO users(id, playerBal) VALUES (" + session.getAttribute("userid") + ", " + req.getAttribute("playerbal") + ")");
+	                        stmt.executeUpdate("insert into users(id, playerBal) values (" + session.getAttribute("userid") + ", " + req.getAttribute("playerbal") + ")");
 				System.out.println("New game!\n");
 			}
 			else
 			{
-				stmt.executeUpdate("INSERT INTO users(id, playerBal) VALUES (" + session.getAttribute("userid") + ", " + req.getAttribute("playerbal") + ")");
+				stmt.executeUpdate("insert into users(id, playerBal) values (" + session.getAttribute("userid") + ", " + req.getAttribute("playerbal") + ")");
 				System.out.println("Inserting into database!\n");
 			}
                 }
@@ -84,12 +85,10 @@ public class GameServlet extends HttpServlet {
 				Game.setPlayerBal(rs.getInt("playerBal"));
 				req.setAttribute("playerbal", Game.getPlayerBal());
 			}
-                        stmt.executeUpdate("UPDATE users SET playerbal=" + req.getAttribute("playerbal") + " WHERE id=" + session.getAttribute("userid"));
+                        stmt.executeUpdate("update users set playerbal=" + req.getAttribute("playerbal") + " where id=" + session.getAttribute("userid"));
                 }
 
-                stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-                rs = stmt.executeQuery("SELECT * FROM users ORDER BY id");
-
+                rs = stmt.executeQuery("select * from users order by id");
                 System.out.println("Display all results:");
                 while(rs.next())
                 {
