@@ -5,9 +5,7 @@ import org.testng.annotations.Test;
 
 /**
  * Created by IntelliJ IDEA.
- * User: nguyenkb
- * Date: Dec 4, 2010
- * Time: 12:56:13 PM
+ * User: Crapout!
  * To change this template use File | Settings | File Templates.
  */
 @Test

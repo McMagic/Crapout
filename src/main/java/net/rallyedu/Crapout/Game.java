@@ -18,7 +18,7 @@ public class Game {
 	private static PlaceBet placeBets = new PlaceBet(); //Place bets (betID = 2)
 	private static DontCome dontComeBet = new DontCome(0); //Dont come bet (betID = 3)
 	private static Hardway hardwayBet = new Hardway(); //Hardway bet (betID = 4)
-	private static Proposition propBets = new Proposition(); //Proposition (betID = 5)
+	private static Proposition propBets = new Proposition(); //PropositionTest (betID = 5)
 	private static Come comeBet = new Come(0); //Come bet (betID = 6)
 	private static Field fieldBet = new Field(0); //Field (betID = 7)
 
@@ -118,7 +118,7 @@ public class Game {
 			case 4: //Hardway Bet
 				return hardwayBet.getBetAmount();
 
-			case 5: //Proposition Bets
+			case 5: //PropositionTest Bets
 				return propBets.getBetAmount();
 
 			case 6: //Come bet
@@ -201,7 +201,7 @@ public class Game {
 				hardwayBet.setBetAmount(betAmt);
 				playerBal -= betAmt[0] + betAmt[1] + betAmt[2] + betAmt[3];
 				break;
-			case 5: //Proposition Bets
+			case 5: //PropositionTest Bets
 				propBets.setBetAmount(betAmt);
 				playerBal -= betAmt[0] + betAmt[1] + betAmt[2] + betAmt[3] + betAmt[4] +betAmt[5];
 				break;
@@ -255,7 +255,7 @@ public class Game {
 		System.out.println("----Money on Hard 10: $" + hardwayBet.getMoneyOnTen() );
 		
 		
-		//Proposition Bets
+		//PropositionTest Bets
 		System.out.println("Current player's proposition bet amounts:");
 		System.out.println("----Money on Any 7: $" + propBets.getAnySevenMoney() );
 		System.out.println("----Money on Any Craps: $" + propBets.getAnyCrapsMoney() );
@@ -350,7 +350,7 @@ public class Game {
         }
         if (betID == 5){
 
-            output += "Proposition: " + propBets.getBetAmount();
+            output += "PropositionTest: " + propBets.getBetAmount();
         }
         if (betID == 6){
 
@@ -387,7 +387,7 @@ public class Game {
         }
         if (propBets.getPayOut() != 0 && betID == 5){
 
-            output += "Proposition: " + propBets.getPayOut();
+            output += "PropositionTest: " + propBets.getPayOut();
         }
         if (comeBet.getPayOut() != 0 && betID == 6){
 
@@ -561,7 +561,7 @@ public class Game {
 			
 			return myBets;
 		}
-		else if (betID == 5){	//Proposition Bets
+		else if (betID == 5){	//PropositionTest Bets
 			
 			//Reset str back to NULL string
 			str = "";
@@ -569,8 +569,8 @@ public class Game {
 			while (!str.equals("n")) //While the user is still making Hardway bets
 			{				
 				//Prompt user for input
-				System.out.println("Make any Proposition Bets you like");
-				System.out.println("To make a Proposition Bet, type the # you want to bet on followed by the amount to bet on it.");
+				System.out.println("Make any PropositionTest Bets you like");
+				System.out.println("To make a PropositionTest Bet, type the # you want to bet on followed by the amount to bet on it.");
 				System.out.println("# of Bet Key (this key tells you what # corresponds to what type of proposition bet:");
 				System.out.println("7----Any Seven:");
 				System.out.println("1----Any Craps:");
@@ -580,7 +580,7 @@ public class Game {
 				System.out.println("11---Yo Eleven");
 				System.out.println("For example: To bet $100 on Any Craps, I would type 1 100. I also use this command to add to an existing bet.");
 				System.out.println("For example: To remove $100 on Any Craps, I would type 1 -100.");
-				System.out.println("To stop making Proposition Bets, type n and hit enter.");
+				System.out.println("To stop making PropositionTest Bets, type n and hit enter.");
 				//Read in user input
 				str = keyboard.readLine(); 
 				String result[] = str.split("\\s");

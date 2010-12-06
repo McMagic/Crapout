@@ -1,8 +1,6 @@
 /**
  * Created by IntelliJ IDEA.
- * User: zachmanc
- * Date: Oct 21, 2010
- * Time: 12:53:14 PM
+ * User: Crapout!
  * To change this template use File | Settings | File Templates.
  */
 
