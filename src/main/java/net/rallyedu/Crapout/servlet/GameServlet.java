@@ -21,19 +21,26 @@ public class GameServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	HttpSession session = req.getSession(true);
+	boolean newGame = false;
 	
 	// The session's userid needs to be set before the MySQL calls
         try {
-            AccessToken accessToken = getAccessToken(session);
-            Twitter twitter = newTwitter(accessToken);
-            req.setAttribute("User", twitter.showUser(twitter.getId()));
-            session.setAttribute("userid", twitter.getId());
-
+	            AccessToken accessToken = getAccessToken(session);
+	            Twitter twitter = newTwitter(accessToken);
+	            req.setAttribute("User", twitter.showUser(twitter.getId()));
+		if (session.getAttribute("userid") == null)
+		{
+	            session.setAttribute("userid", twitter.getId());
+			newGame = true;
+		}
         } catch (TwitterException e) {
+                e.printStackTrace();
         }
 	
-	req.setAttribute("playerbal", Game.getPlayerBal());
-        req.setAttribute("crapStatus", Game.getCrapStatus());
+	if (newGame == false)
+	{
+		req.setAttribute("playerbal", Game.getPlayerBal());
+	}
 	
 	// MySQL
         try {
@@ -55,14 +62,29 @@ public class GameServlet extends HttpServlet {
 
                 // Check if there is already this user
                 stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-		rs = stmt.executeQuery("SELECT * FROM users WHERE 'id'=" + session.getAttribute("userid"));
-                if (!rs.next())
+		rs = stmt.executeQuery("SELECT * FROM users WHERE id=" + session.getAttribute("userid"));
+                if ((!rs.next()) && (newGame == true))
                 {
-                        stmt.executeUpdate("INSERT INTO users(id, playerBal) VALUES (" + session.getAttribute("userid") + ", " + req.getAttribute("playerbal") + ")");
+			if (newGame == true)
+			{
+				req.setAttribute("playerbal", Game.getPlayerBal());
+	                        stmt.executeUpdate("INSERT INTO users(id, playerBal) VALUES (" + session.getAttribute("userid") + ", " + req.getAttribute("playerbal") + ")");
+				System.out.println("New game!\n");
+			}
+			else
+			{
+				stmt.executeUpdate("INSERT INTO users(id, playerBal) VALUES (" + session.getAttribute("userid") + ", " + req.getAttribute("playerbal") + ")");
+				System.out.println("Inserting into database!\n");
+			}
                 }
                 else
                 {
-                        stmt.executeUpdate("UPDATE users SET playerbal=" + req.getAttribute("playerbal") + " WHERE 'id'=" + session.getAttribute("userid"));
+			if (newGame == true)
+			{
+				Game.setPlayerBal(rs.getInt("playerBal"));
+				req.setAttribute("playerbal", Game.getPlayerBal());
+			}
+                        stmt.executeUpdate("UPDATE users SET playerbal=" + req.getAttribute("playerbal") + " WHERE id=" + session.getAttribute("userid"));
                 }
 
                 stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -80,6 +102,8 @@ public class GameServlet extends HttpServlet {
         } catch (Exception e) {
                 e.printStackTrace();
         }
+	
+        req.setAttribute("crapStatus", Game.getCrapStatus());
 	
 	String errorMsg = "";
 	if (session.getAttribute("errorMsg") != null)
