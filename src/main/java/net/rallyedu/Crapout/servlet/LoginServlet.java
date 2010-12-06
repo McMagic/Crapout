@@ -64,7 +64,7 @@ public class LoginServlet extends HttpServlet {
             setAccessToken(session, twitter.getOAuthAccessToken(requestToken, req.getParameter(PIN_PARAM)));
             
 
-            resp.sendRedirect("game");
+            resp.sendRedirect("game#game");
 
             
         } catch (TwitterException e) {

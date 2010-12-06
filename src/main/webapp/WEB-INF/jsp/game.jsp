@@ -3,6 +3,7 @@
 
 <layout:default>
 	<jsp:attribute name="content">
+		<a name="game"></a>
 		<img id="table" src="http://jonghost.iyikes.com/craps/table.php?
 			p=<c:out value="${point}"/>
 			&pl=<c:out value="${passline}"/>
@@ -94,6 +95,7 @@
         <div id="betform">
 		<c:out value="${errorMsg}"/><br/>
 		<form action="<c:url value="/roll"/>" method="post">
+			<input type="submit" value="Roll"/><br/>
 			<div id="betname">Passline Bet:</div>
 			<input id="betamt" type="text" name="passlineBet"/><br/>
 			<div id="betname">Don't Passline Bet:</div>
@@ -136,7 +138,6 @@
 			<input id="betamt" type="text" name="propTwelveBet"/><br/>
 			<div id="betname">Field Bet:</div>
 			<input id="betamt" type="text" name="fieldBet"/><br/>
-			<input type="submit" value="Roll"/><br/>
 		</form>
         </div>
 
