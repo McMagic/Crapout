@@ -71,6 +71,14 @@
         <filter-name>twitter</filter-name>
         <url-pattern>/game</url-pattern>
     </filter-mapping>
+	<servlet>
+		<servlet-name>reset</servlet-name>
+		<servlet-class>net.rallyedu.Crapout.servlet.ResetServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>reset</servlet-name>
+		<url-pattern>/reset</url-pattern>
+	</servlet-mapping>
 
 
 

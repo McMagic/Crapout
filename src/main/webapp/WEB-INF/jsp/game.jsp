@@ -139,6 +139,9 @@
 			<div id="betname">Field Bet:</div>
 			<input id="betamt" type="text" name="fieldBet"/><br/>
 		</form>
+		<form action="<c:url value="/reset"/>" method="post">
+			<input type="submit" value="Start Over!"/><br/>
+		</form>
         </div>
 
 <%-- End content container --%>

@@ -17,12 +17,12 @@ import static net.rallyedu.Crapout.TwitterUtils.setAccessToken;
 
 
 /**
- * Created by IntelliJ IDEA.
- * User: kalkur
- * Date: Dec 4, 2010
- * Time: 7:33:52 PM
- * To change this template use File | Settings | File Templates.
- */
+* Created by IntelliJ IDEA.
+* User: kalkur
+* Date: Dec 4, 2010
+* Time: 7:33:52 PM
+* To change this template use File | Settings | File Templates.
+*/
 public class LoginServlet extends HttpServlet {
     public static final String AUTH_FORM_VIEW = "/WEB-INF/jsp/loginForm.jsp";
     public static final String AUTH_RESULTS_VIEW = "/WEB-INF/jsp/game.jsp";
@@ -72,3 +72,4 @@ public class LoginServlet extends HttpServlet {
         }
     }
 }
+
