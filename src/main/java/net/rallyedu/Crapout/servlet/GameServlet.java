@@ -68,7 +68,8 @@ public class GameServlet extends HttpServlet {
                 {
 			if (newGame == true)
 			{
-				req.setAttribute("playerbal", Game.getPlayerBal());
+				req.setAttribute("playerbal", 1000);
+				Game.setPlayerBal(1000);
 	                        stmt.executeUpdate("insert into users(id, playerBal) values (" + session.getAttribute("userid") + ", " + req.getAttribute("playerbal") + ")");
 				System.out.println("New game!\n");
 			}
