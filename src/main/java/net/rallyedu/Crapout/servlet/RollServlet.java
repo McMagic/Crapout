@@ -527,7 +527,14 @@ public class RollServlet extends HttpServlet {
 
                 /** ALL BETS HAVE BEEN SET: START GAME NOW **/
                 // Start a round
+
+                int pointPreRoll = Game.getPoint();
+
                 Game.playRound();
+                 
+
+                session.setAttribute("crapStatus", Game.getCrapStatus(pointPreRoll));
+
 
                 // For debugging
                 Game.printPlayerBets();

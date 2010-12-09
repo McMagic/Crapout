@@ -93,55 +93,60 @@
         </div>
 
         <div id="betform">
-		<c:out value="${errorMsg}"/><br/>
-		<form action="<c:url value="/roll"/>" method="post">
-			<input type="submit" value="Roll"/><br/>
-			<div id="betname">Passline Bet:</div>
-			<input id="betamt" type="text" name="passlineBet"/><br/>
-			<div id="betname">Don't Passline Bet:</div>
-			<input id="betamt" type="text" name="dontPasslineBet"/><br/>
-			<div id="betname">Place 4 Bet:</div>
-			<input id="betamt" type="text" name="placefourBet"/><br/>
-			<div id="betname">Place 5 Bet:</div>
-			<input id="betamt" type="text" name="placefiveBet"/><br/>
-			<div id="betname">Place 6 Bet:</div>
-			<input id="betamt" type="text" name="placesixBet"/><br/>
-			<div id="betname">Place 8 Bet:</div>
-			<input id="betamt" type="text" name="placeeightBet"/><br/>
-			<div id="betname">Place 9 Bet:</div>
-			<input id="betamt" type="text" name="placenineBet"/><br/>
-			<div id="betname">Place 10 Bet:</div>
-			<input id="betamt" type="text" name="placetenBet"/><br/>
-			<div id="betname">Come Bet:</div>
-			<input id="betamt" type="text" name="comeBet"/><br/>
-			<div id="betname">Don't Come Bet:</div>
-			<input id="betamt" type="text" name="dontComeBet"/><br/>
-			<div id="betname">Hardway 4 Bet:</div>
-			<input id="betamt" type="text" name="hardwayfourBet"/><br/>
-			<div id="betname">Hardway 6 Bet:</div>
-			<input id="betamt" type="text" name="hardwaysixBet"/><br/>
-			<div id="betname">Hardway 8 Bet:</div>
-			<input id="betamt" type="text" name="hardwayeightBet"/><br/>
-			<div id="betname">Hardway 10 Bet:</div>
-			<input id="betamt" type="text" name="hardwaytenBet"/><br/>
-			<div id="betname">Any Seven Bet:</div>
-			<input id="betamt" type="text" name="propAnySevenBet"/><br/>
-			<div id="betname">Any Craps Bet:</div>
-			<input id="betamt" type="text" name="propAnyCrapsBet"/><br/>
-			<div id="betname">Proposition 2 Bet:</div>
-			<input id="betamt" type="text" name="propTwoBet"/><br/>
-			<div id="betname">Proposition 3 Bet:</div>
-			<input id="betamt" type="text" name="propThreeBet"/><br/>
-			<div id="betname">Proposition 11 Bet:</div>
-			<input id="betamt" type="text" name="propElevenBet"/><br/>
-			<div id="betname">Proposition 12 Bet:</div>
-			<input id="betamt" type="text" name="propTwelveBet"/><br/>
-			<div id="betname">Field Bet:</div>
-			<input id="betamt" type="text" name="fieldBet"/><br/>
-		</form>
-		<form action="<c:url value="/reset"/>" method="post">
-			<input type="submit" value="Start Over!"/><br/>
-		</form>
+            <c:out value="${errorMsg}"/><br/>
+
+
+            <form action="<c:url value="/reset"/>" method="post">
+                <input id="startover" type="submit" value="Start Over!"/><br/>
+            </form>
+
+
+            <form action="<c:url value="/roll"/>" method="post">
+                <input id="rollButton" type="submit" value="Roll"/> <br/>
+
+                <div id="betname">Passline Bet:</div>
+                <input id="betamt" type="text" name="passlineBet"/><br/>
+                <div id="betname">Don't Passline Bet:</div>
+                <input id="betamt" type="text" name="dontPasslineBet"/><br/>
+                <div id="betname">Place 4 Bet:</div>
+                <input id="betamt" type="text" name="placefourBet"/><br/>
+                <div id="betname">Place 5 Bet:</div>
+                <input id="betamt" type="text" name="placefiveBet"/><br/>
+                <div id="betname">Place 6 Bet:</div>
+                <input id="betamt" type="text" name="placesixBet"/><br/>
+                <div id="betname">Place 8 Bet:</div>
+                <input id="betamt" type="text" name="placeeightBet"/><br/>
+                <div id="betname">Place 9 Bet:</div>
+                <input id="betamt" type="text" name="placenineBet"/><br/>
+                <div id="betname">Place 10 Bet:</div>
+                <input id="betamt" type="text" name="placetenBet"/><br/>
+                <div id="betname">Come Bet:</div>
+                <input id="betamt" type="text" name="comeBet"/><br/>
+                <div id="betname">Don't Come Bet:</div>
+                <input id="betamt" type="text" name="dontComeBet"/><br/>
+                <div id="betname">Hardway 4 Bet:</div>
+                <input id="betamt" type="text" name="hardwayfourBet"/><br/>
+                <div id="betname">Hardway 6 Bet:</div>
+                <input id="betamt" type="text" name="hardwaysixBet"/><br/>
+                <div id="betname">Hardway 8 Bet:</div>
+                <input id="betamt" type="text" name="hardwayeightBet"/><br/>
+                <div id="betname">Hardway 10 Bet:</div>
+                <input id="betamt" type="text" name="hardwaytenBet"/><br/>
+                <div id="betname">Any Seven Bet:</div>
+                <input id="betamt" type="text" name="propAnySevenBet"/><br/>
+                <div id="betname">Any Craps Bet:</div>
+                <input id="betamt" type="text" name="propAnyCrapsBet"/><br/>
+                <div id="betname">Proposition 2 Bet:</div>
+                <input id="betamt" type="text" name="propTwoBet"/><br/>
+                <div id="betname">Proposition 3 Bet:</div>
+                <input id="betamt" type="text" name="propThreeBet"/><br/>
+                <div id="betname">Proposition 11 Bet:</div>
+                <input id="betamt" type="text" name="propElevenBet"/><br/>
+                <div id="betname">Proposition 12 Bet:</div>
+                <input id="betamt" type="text" name="propTwelveBet"/><br/>
+                <div id="betname">Field Bet:</div>
+                <input id="betamt" type="text" name="fieldBet"/><br/>
+            </form>
         </div>
 
 <%-- End content container --%>

@@ -218,7 +218,9 @@ public class Game {
 
 		//Remember that certain bets can only be made at certain times in the game
 	}
-	
+
+
+    //Function Used for debug in the terminal
 	public static void printPlayerBets() {
         //Print current point
         System.out.println("POINT: " + point);
@@ -400,24 +402,45 @@ public class Game {
         return output;
     }
 
-    public static String getCrapStatus(){
+
+    
+    public static String getCrapStatus(int pointPreRoll) {
+
+
         int[] diceArray = dice.getRollArray();
         int diceSum = diceArray[0] + diceArray[1];
         String msg="";
-        if (point != 0){  //If point is set
-            if (diceSum == 7){
-                msg += "SEVEN OUT!!";
-            }
+
+
+
+
+         //Seven out
+        if ( (pointPreRoll != 0) && (diceSum == 7) ) {
+            msg = "SEVEN OUT!! Your POOR now!";
+
         }
-        else { //Point hasn't been set
-            if (diceSum == 2 || diceSum == 3 || diceSum ==12){
-                msg +="CRAP OUT!! You're POOR now";
-            }
+        //Crap out
+        else if ((pointPreRoll == 0) && ( (diceSum == 2) || (diceSum == 3) || (diceSum == 12) )) {
+
+            msg ="CRAP OUT!! Your POOR now!";
+
         }
+        //Rolled the point
+        else if (pointPreRoll == diceSum) {
+
+            msg = "Rolled the Point(" + pointPreRoll + "). Point is now Off";
+
+        }
+        //Winner 7 or 11
+        else if ( (diceSum == 7 || diceSum == 11) && (pointPreRoll == 0)  ) {
+            msg = "Winner " + diceSum + "!";
+
+        }
+
         return msg;
     }
 
-/* Not using anymore
+/* Not using anymore: The following code was used during Text based version of game
 	//getBetInput: Used to read in bet input amounts from user, store them in an array, and return that array
 	public static int[] getBetInput(int betID) throws IOException{
 		//Declare and init string variables that store user input
@@ -701,7 +724,7 @@ public class Game {
         }
 
 
-        /*
+        /* The following code was uSed during the text based version of the game
 
 		//Setting the don't come point 
 		if ((dontComePoint == 0) && (dontComeBet.getState() == 1)){

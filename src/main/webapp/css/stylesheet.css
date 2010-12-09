@@ -26,7 +26,13 @@ body {
 .container .user { display: inline; float: left; padding: 10px; width: 160px; }
 .container .user #pic { float: left; padding: 5px; }
 .container .user #name { float: right;  padding: 5px; }
-.container .user #signout { float: right; padding: 5px; }
+.container .user #signout { float: right; padding: 5px; font-size:1px;}
+.container #startover { -webkit-text-size-adjust:none; font-size:24px;}
+.container #rollButton {  -webkit-text-size-adjust:none; font-size:24px; }
+
+
+
+
 
 #tweet_form {
     margin-bottom: 20px;
