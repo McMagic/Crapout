@@ -29,6 +29,8 @@ public class LoginServlet extends HttpServlet {
     public static final String AUTH_URL_ATTRIBUTE = "authUrl";
     public static final String REQUEST_TOKEN_ATTRIBUTE = "requestToken";
     public static final String PIN_PARAM = "pin";
+    public static final String ERROR_STRING = "Invalid login. Please try again.";
+    
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -43,20 +45,24 @@ public class LoginServlet extends HttpServlet {
             req.setAttribute(AUTH_URL_ATTRIBUTE, requestToken.getAuthorizationURL());
             req.getRequestDispatcher(AUTH_FORM_VIEW).forward(req, resp);
         } catch (TwitterException e) {
-            resp.sendError(e.getStatusCode(), e.getMessage());
+
+            req.setAttribute("errorMsg", ERROR_STRING);
+
+            req.getRequestDispatcher(AUTH_FORM_VIEW).forward(req, resp);
+
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Twitter twitter = newTwitter();
+
+        HttpSession session = req.getSession();
+
+        RequestToken requestToken = (RequestToken) session.getAttribute(REQUEST_TOKEN_ATTRIBUTE);
+
+
         try {
-            HttpSession session = req.getSession();
-
-
-            
-            RequestToken requestToken = (RequestToken) session.getAttribute(REQUEST_TOKEN_ATTRIBUTE);
-
 
             session.removeAttribute(REQUEST_TOKEN_ATTRIBUTE);
             
@@ -68,8 +74,14 @@ public class LoginServlet extends HttpServlet {
 
             
         } catch (TwitterException e) {
-            resp.sendError(e.getStatusCode(), e.getMessage());
-        }
+             resp.sendRedirect("/login?errorMsg=" + ERROR_STRING);
+
+
+
+         } catch(IllegalStateException e) {
+             resp.sendRedirect("/login?errorMsg=" + ERROR_STRING);
+         }
+        
     }
 }
 

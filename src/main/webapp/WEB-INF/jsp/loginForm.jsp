@@ -12,6 +12,16 @@
             <li>Click Sign In with Twitter.</li>
         </ol>
 
+        <c:choose>
+            <c:when test="${errorMsg != null}">
+                <c:out value="${errorMsg}"/><br/>
+            </c:when>
+            <c:otherwise>
+                <c:out value="${param.errorMsg}"/><br/>
+            </c:otherwise>
+        </c:choose>
+                
+
         <form action="<c:url value="/login"/>" method="post">
             <label for="pin">PIN:</label>
             <input id="pin" type="text" name="pin"/>
